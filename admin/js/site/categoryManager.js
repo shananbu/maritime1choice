@@ -19,14 +19,15 @@ $(document).ready(function () {
         ]
     });
 
-    getAllCategories();
 
+    getAllCategories();
 
     $('#saveOrUpdateButton').click(function () {
         if ($('#categoryName').val() == "" && $('#categoryId').val() == "") {
             alert("Please enter category.");
         } else {
             var requestMap = new Object();
+            requestMap["categoryId"] = $('#categoryId').val();
             requestMap["categoryName"] = $('#categoryName').val();
             requestMap["categoryStatus"] = $('#categoryStatus').val();
             requestMap["action"] = 'addCategory';
