@@ -1,0 +1,360 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('bootstrap.css');
+/*@import url('bootstrap-theme.css');*/
+@import url('font-awesome.css');
+/* External Font import start */
+
+
+/* BEGIN Regular */
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url("fonts/OpenSans-Regular.eot?v=1.1.0");
+	src: url("fonts/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("fonts/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("fonts/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("fonts/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("fonts/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+/* END Regular */
+
+
+/* BEGIN Semibold */
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url("fonts/OpenSans-Semibold.eot?v=1.1.0");
+	src: url("fonts/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("fonts/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("fonts/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("fonts/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("fonts/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
+	font-weight: 600;
+	font-style: normal;
+}
+/* END Semibold */
+
+
+/* BEGIN Bold */
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url("fonts/OpenSans-Bold.eot?v=1.1.0");
+	src: url("fonts/OpenSans-Bold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("fonts/OpenSans-Bold.woff2?v=1.1.0") format("woff2"), url("fonts/OpenSans-Bold.woff?v=1.1.0") format("woff"), url("fonts/OpenSans-Bold.ttf?v=1.1.0") format("truetype"), url("fonts/OpenSans-Bold.svg?v=1.1.0#Bold") format("svg");
+	font-weight: bold;
+	font-style: normal;
+}
+/* END Bold */
+
+
+/* External Font import end */
+
+
+/* reset css start */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+::selection {
+	background: #34B6D1;
+	color: #fff;
+}
+img {
+	border: 0px;
+}
+
+::-moz-selection {
+ background: #34B6D1;
+ color: #fff;
+}
+label {
+	font-weight: normal
+}
+::-webkit-selection {
+ background: #34B6D1;
+ color: #fff;
+}
+
+::-o-selection {
+ background: #34B6D1;
+ color: #fff;
+}
+ul, ol, li {
+	list-style: none;
+}
+p {
+	line-height: 22px;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+a {
+	text-decoration: none;
+}
+/* change colours to suit your needs */
+
+ins {
+	background-color: #ff9;
+	color: #000;
+	text-decoration: none;
+}
+/* change colours to suit your needs */
+
+mark {
+	background-color: #ff9;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+del {
+	text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* change border colour to suit your needs */
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+* {
+	box-sizing: border-box;
+	font-family: 'Open Sans', Arial;
+}
+input[type="text"], select, textarea, input[type="focus"], {
+ font-family: 'Open Sans', 'Arial';
+ transition: all 0.4s linear;
+ -moz-transition: all 0.4s linear;
+ -o-transition: all 0.4s linear;
+ -webkit-transition: all 0.4s linear;
+}
+input[type="text"]:focus, select:focus, textarea:focus, input[type="password"]:focus {
+	border: #34B6D1 1px solid !important;
+	transition: all 0.4s linear;
+	-moz-transition: all 0.4s linear;
+	-o-transition: all 0.4s linear;
+	-webkit-transition: all 0.4s linear;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+*{
+	
+}
+textarea {
+	resize: vertical;
+}
+body {
+	font-family: 'Open Sans', 'Arial';
+	font-size: 13px;
+	margin: 0 auto;
+	padding: 0px;
+	color: #252525;
+	font-weight: normal;
+	background: #E9EDF2;
+}
+/* reset css end */
+
+.ful_row {
+	display: block;
+}
+.clr_fix:after, .clr_fix:before, .ful_row:after, .ful_row:before, h1:after, h2:after, .panel_box:after, .panel_row:after{
+	content: "";
+	display: block;
+	clear: both;
+	line-height: 0;
+	height: 0;
+}
+
+.top_header{
+	background:#ffffff;
+	box-shadow:1px 1px 3px rgba(0,0,0,0.5);
+}
+.logo{
+	background:#22BAA0;
+	color:#ffffff;
+	float:left;
+	padding:10px;
+	font-size:20px;
+	text-transform:uppercase;
+	font-weight:600;
+	width:17%;
+	text-align:center;
+}
+
+.top_right{
+float:right;
+margin-right:20px;
+}
+.top_right li{
+	position:relative;
+	display:inline-block;
+	vertical-align:middle;
+	padding-left:10px;
+}
+.top_right li:first-child{
+	padding-left:0px;
+}
+.top_pro img{
+	border-radius:50%;
+	display:inline-block;
+	vertical-align:middle;	
+}
+.top_pro span{
+	text-transform:capitalize;
+}
+.top_pro{
+padding-top:4px;	
+cursor:pointer;
+}
+.log_out{
+	cursor:pointer;
+}
+.log_out i{
+	color:#22BAA0;
+}
+.aside_left{
+	position:fixed;
+	left:0;
+	top:49px;
+	bottom:0;
+	overflow:auto;
+	width:17%;
+	background:#34425A;
+}
+.menu_hide{
+	float: left;
+    font-size: 17px;
+    font-weight: normal;
+    margin-left: 15px;
+    padding-top: 10px;
+	cursor:pointer;
+}
+
+#wrapper.toggled {
+    margin-left: 0;
+	
+}
+#wrapper {
+    margin-left: 17%;
+}
+#wrapper.toggled #sidebar-wrapper {
+    width: 0;
+}
+.main_info{
+	margin-top:49px;
+	padding:10px;
+	color:#252525;
+	
+}
+.aside_left ul{
+	display:block;	
+}
+.aside_left ul li{
+	display:block;
+}
+.aside_left ul li a{
+	display:block;
+	padding:8px 10px;
+	color:#B5BCC9;
+	font-weight:600;
+		text-transform:capitalize
+}
+.aside_left ul li a:hover{
+	background:#2B384E;
+	color:#ffffff;
+	
+}
+
+.h_1{
+font-size:22px;	
+font-weight:normal;
+text-transform:capitalize;
+background: #e9edf2 none repeat scroll 0 0;
+    border-bottom: 1px solid #D6D6D6;
+	padding:0 0 15px 0;
+}
+
+.panel_box{
+	
+	margin-top:15px;
+	background:#ffffff;
+	padding:8px;
+	box-shadow:0 0 3px rgba(0, 0, 0, 0.3);
+}
+.h_2{
+	text-transform:capitalize;
+	font-size:15px;
+	padding-bottom:5px;
+	margin-bottom:5px;
+	font-weight:600;
+	border-bottom:1px solid #BFBFBF;
+}
+.form_li input[type="text"], .form_li input[type="password"], .form_li textarea, .form_li select, .form_li input[type="date"] {
+	border: 1px solid #bdbdbd;
+    width:100%;
+    color: #343434;
+    padding: 6px;
+	border-radius:5px;
+}
+.form_li label{
+	padding-bottom:3px;
+	font-weight:600;
+	display:block;
+	text-transform:capitalize
+	
+	
+}
+.panel_row{
+	padding-top:5px;
+	
+}
+.panel_row li{
+margin:15px auto;
+}
+
+.ad_top_mar{
+	margin-top:10px;
+}
+
+.te_al_cen{
+	text-align:center;
+}
+input[type="button"], input[type="reset"], button{
+background:#08a7c3;
+color:#ffffff;
+font-weight:600;
+text-transform:uppercase;
+border:0px;
+padding:5px 15px;
+border-radius:5px;
+}
+.btn_pan{
+	padding-top:15px;
+	padding-bottom:10px;
+}
+input[type="button"].res_btn{
+	background:#f25656;
+}
+
+
+.data_table select{
+	border:0px;
+	
+}
