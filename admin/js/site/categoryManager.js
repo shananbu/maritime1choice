@@ -39,6 +39,7 @@ $(document).ready(function () {
                 success: function (resultData) {
                     alert(resultData);
                     getAllCategories();
+                    reset();
                 }
             });
             saveCategory.error(function () {

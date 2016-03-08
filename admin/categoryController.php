@@ -12,14 +12,15 @@ if (!empty($_SESSION['login_user'])) {
             $categoryStatus = addslashes($_POST['categoryStatus']);
             $categoryId = addslashes($_POST['categoryId']);
             if (!empty($categoryId)) {
-                $sql = "UPDATE category SET name='$categoryName', status='$categoryStatus', updatedDate=  now() WHERE ID ='$categoryId' ";
+                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, updatedDate=  now() WHERE ID ='$categoryId' ";
+                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "Category updated successfully.";
                 } else {
                     echo "Error while updating Category.";
                 }
             } else {
-                $sql = "INSERT INTO category (name, status, createdDate) VALUES ('$categoryName', '$categoryStatus', now())";
+                $sql = "INSERT INTO category (name, status, createdDate) VALUES ('$categoryName', $categoryStatus, now())";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category created successfully.";
                 } else {
