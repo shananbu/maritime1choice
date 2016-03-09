@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 session_start();
 if (!empty($_SESSION['login_user'])) {
     ?>
@@ -23,19 +24,11 @@ if (!empty($_SESSION['login_user'])) {
         <link href="css/demo_table.css" rel="stylesheet" type="text/css">
         <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
-                oTable = $('#categoryTable').dataTable({
-                    "bJQueryUI": true,
-                    "bAutoWidth": true,
-                    "bSort": true,
-                    "bScrollCollapse": false,
-                    "sScrollY": "220px",
-                    "sPaginationType": "full_numbers"
-                });
-            });
-        </script>
         <!-- jq_table script end-->
+        <script src="js/texteditor/jquery-te-1.4.0.min.js"></script>
+        <link href="js/texteditor/jquery-te-1.4.0.css" rel="stylesheet" type="text/css">
+
+        <script src="js/site/serviceManager.js"></script>
     </head>
     <body>
 
@@ -49,62 +42,56 @@ if (!empty($_SESSION['login_user'])) {
         <section class="main_info">
             <div class="panel_box">
                 <h1 class="h_2">Service Manager</h1>
-
+                <input type="hidden" id="serviceId">
                 <div class="panel_row form_li">
                     <div class="row">
                         <div class="col-sm-4">
                             <label> Category :</label>
-                            <select>
-                                <option>Cat - 1</option>
-                                <option>Cat - 1</option>
+                            <select id="categoryId">
+                                <option value="-1">--Select--</option>
+                                <?php
+                                $sql = "SELECT id, name FROM category order by name";
+                                $result = mysqli_query($iCon, $sql);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="col-sm-4">
                             <label> Service : </label>
-                            <input type="text" placeholder="Enter Service">
+                            <input type="text" placeholder="Enter Service" id="serviceName">
                         </div>
                         <div class="col-sm-4">
                             <label> Status :</label>
-                            <select>
-                                <option>Active</option>
-                                <option>InActive</option>
+                            <select id="serviceStatus">
+                                <option value="1">Active</option>
+                                <option value="0">InActive</option>
                             </select>
                         </div>
                         <div class="col-sm-12 ad_top_mar">
                             <label> Description :</label>
-                            <textarea></textarea>
+                            <textarea id="serviceDesc"></textarea>
                         </div>
                         <div class="col-sm-12 te_al_cen btn_pan">
-                            <input type="button" value="save">
-                            <input type="button" value="clear" class="res_btn">
+                            <input type="button" value="save" id="saveOrUpdateService">
+                            <input type="button" value="clear" class="res_btn" id="resetService">
                         </div>
                     </div>
                 </div>
                 <div class="ful_row data_table">
-                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="categoryTable">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="serviceTable">
                         <thead>
                         <tr>
                             <th>Category</th>
                             <th>Service</th>
                             <th>Description</th>
+                            <th>Status</th>
+                            <th>StatusId</th>
+                            <th>ServiceId</th>
+                            <th>CategoryId</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 4.0
-                            </td>
-                            <td>Win 95+</td>
-                        </tr>
-                        <tr class="odd gradeC">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 5.0
-                            </td>
-                            <td>Win 95+</td>
-                        </tr>
-                        </tbody>
                     </table>
                 </div>
             </div>

@@ -30,33 +30,11 @@ if (!empty($_SESSION['login_user'])) {
             <?php include("adminMenu.php"); ?>
         </aside>
         <section class="main_info">
-            <div class="h_1"> Latest news</div>
             <div class="panel_box">
-                <h1 class="h_2">News Article - 1</h1>
+                <h1 class="h_2">Admin Home</h1>
 
                 <div class="panel_row form_li">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <label> Date </label>
-                            <input type="text" placeholder="Enter Date">
-                        </div>
-                        <div class="col-sm-4">
-                            <label> Month </label>
-                            <input type="text" placeholder="Enter Month">
-                        </div>
-                        <div class="col-sm-4">
-                            <label> title </label>
-                            <input type="text" placeholder="Enter Title">
-                        </div>
-                        <div class="col-sm-12 ad_top_mar">
-                            <label> title </label>
-                            <textarea></textarea>
-                        </div>
-                        <div class="col-sm-12 te_al_cen btn_pan">
-                            <input type="button" value="save">
-                            <input type="button" value="clear" class="res_btn">
-                        </div>
-                    </div>
+
                 </div>
 
             </div>

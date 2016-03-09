@@ -33,7 +33,7 @@ $(document).ready(function () {
             requestMap["action"] = 'addCategory';
             var saveCategory = $.ajax({
                 type: 'POST',
-                url: "categoryController.php",
+                url: "adminController.php",
                 data: $.param(requestMap),
                 dataType: "text",
                 success: function (resultData) {
@@ -74,7 +74,7 @@ $(document).ready(function () {
         requestMap["action"] = 'getAllCategories';
         var saveCategory = $.ajax({
             type: 'POST',
-            url: "categoryController.php",
+            url: "adminController.php",
             data: $.param(requestMap),
             dataType: "json",
             success: function (resultData) {

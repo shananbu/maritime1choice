@@ -23,19 +23,9 @@ if (!empty($_SESSION['login_user'])) {
         <link href="css/demo_table.css" rel="stylesheet" type="text/css">
         <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
-                oTable = $('#categoryTable').dataTable({
-                    "bJQueryUI": true,
-                    "bAutoWidth": true,
-                    "bSort": true,
-                    "bScrollCollapse": false,
-                    "sScrollY": "200px",
-                    "sPaginationType": "full_numbers"
-                });
-            });
-        </script>
         <!-- jq_table script end-->
+
+        <script src="js/site/careerManager.js"></script>
     </head>
     <body>
 
@@ -54,72 +44,63 @@ if (!empty($_SESSION['login_user'])) {
                     <div class="row">
                         <div class="col-sm-4">
                             <label> Job Title : </label>
-                            <input type="text" placeholder="Enter Date">
+                            <input type="text" placeholder="Enter Job Title" id="jobTitle">
+                            <input type="hidden" id="jobId">
                         </div>
                         <div class="col-sm-4">
                             <label> Location :</label>
-                            <input type="text" placeholder="Enter Month">
+                            <input type="text" placeholder="Enter Location" id="location">
                         </div>
                         <div class="col-sm-4">
                             <label> Qualification :</label>
-                            <input type="text" placeholder="Enter Title">
+                            <input type="text" placeholder="Enter Qualification" id="qualification">
                         </div>
                         <div class="col-sm-4">
                             <label> Experience :</label>
-                            <input type="text" placeholder="Enter Date">
+                            <input type="text" placeholder="Enter Experience" id="experience">
                         </div>
                         <div class="col-sm-4">
                             <label> No. of Positions :</label>
-                            <input type="text" placeholder="Enter Month">
+                            <input type="text" placeholder="Enter Positions" id="numberOfPositions">
                         </div>
                         <div class="col-sm-4">
                             <label> Valid till :</label>
-                            <input type="date" placeholder="Enter Title">
-                        </div>
-                        <div class="col-sm-4">
-                            <label> Status :</label>
-                            <input type="text" placeholder="Enter Title">
+                            <input type="date" placeholder="Enter Validity" id="validity">
                         </div>
                         <div class="col-sm-8 ad_top_mar">
                             <label> Job Description :</label>
-                            <textarea></textarea>
+                            <textarea id="jobDescription"></textarea>
+                        </div>
+                        <div class="col-sm-4">
+                            <label> Status :</label>
+                            <select id="jobStatus">
+                                <option value="1">Active</option>
+                                <option value="0">InActive</option>
+                            </select>
                         </div>
                         <div class="col-sm-12 te_al_cen btn_pan">
-                            <input type="button" value="save">
-                            <input type="button" value="clear" class="res_btn">
+                            <input type="button" value="save" id="saveOrUpdateJob">
+                            <input type="button" value="clear" class="res_btn" id="resetJob">
                         </div>
                     </div>
                 </div>
                 <div class="ful_row data_table">
-                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="categoryTable">
+                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="careerTable">
                         <thead>
                         <tr>
                             <th>Job Title</th>
+                            <th>Location</th>
                             <th>Qualification</th>
                             <th>Experience</th>
                             <th>No. of Positions</th>
+                            <th>Valid Till</th>
+                            <th>Job Description</th>
                             <th>Status</th>
+                            <th>StatusId</th>
+                            <th>JobId</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 4.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td class="center">4</td>
-                            <td class="center">X</td>
-                        </tr>
-                        <tr class="odd gradeC">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 5.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td class="center">5</td>
-                            <td class="center">C</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
