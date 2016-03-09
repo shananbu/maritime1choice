@@ -68,3 +68,16 @@ create table Careers (
 	updatedDate datetime,
 	constraint pk5 primary key(id)
 );
+
+-- drop table Client;
+create table Client (
+	id bigint auto_increment,
+	name varchar(100),
+	referenceUrl varchar(100),
+	description varchar(10000),
+	logoFileName varchar(100),
+	status bit,
+	createdDate datetime,
+	updatedDate datetime,
+	constraint pk6 primary key(id)
+);

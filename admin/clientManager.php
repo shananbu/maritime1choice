@@ -23,19 +23,9 @@ if (!empty($_SESSION['login_user'])) {
         <link href="css/demo_table.css" rel="stylesheet" type="text/css">
         <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function () {
-                oTable = $('#clientTable').dataTable({
-                    "bJQueryUI": true,
-                    "bAutoWidth": true,
-                    "bSort": true,
-                    "bScrollCollapse": false,
-                    "sScrollY": "200px",
-                    "sPaginationType": "full_numbers"
-                });
-            });
-        </script>
+
         <!-- jq_table script end-->
+        <script src="js/site/clientManager.js"></script>
     </head>
     <body>
 
@@ -54,30 +44,31 @@ if (!empty($_SESSION['login_user'])) {
                     <div class="row">
                         <div class="col-sm-4">
                             <label> Client Name : </label>
-                            <input type="text" placeholder="Client Name">
+                            <input type="text" placeholder="Client Name" id="clientName">
+                            <input type="hidden" id="clientId">
                         </div>
                         <div class="col-sm-4">
                             <label> Reference URL : </label>
-                            <input type="text" placeholder="Reference URL">
+                            <input type="text" placeholder="Reference URL" id="referenceUrl">
                         </div>
                         <div class="col-sm-4">
                             <label> Status :</label>
-                            <select>
-                                <option>Active</option>
-                                <option>InActive</option>
+                            <select id="clientStatus">
+                                <option value="1">Active</option>
+                                <option value="0">InActive</option>
                             </select>
                         </div>
                         <div class="col-sm-12 ad_top_mar">
                             <label> Description :</label>
-                            <textarea></textarea>
+                            <textarea id="clientDescription"></textarea>
                         </div>
                         <div class="col-sm-4">
                             <label> Client Logo : </label>
-                            <input type="file" placeholder="Client Logo">
+                            <input type="file" placeholder="Client Logo" id="clientLogo" name="clientLogo">
                         </div>
                         <div class="col-sm-12 te_al_cen btn_pan">
-                            <input type="button" value="save">
-                            <input type="button" value="clear" class="res_btn">
+                            <input type="button" value="save" id="saveOrUpdateClient">
+                            <input type="button" value="clear" class="res_btn" id="resetClient">
                         </div>
                     </div>
                 </div>
@@ -90,27 +81,11 @@ if (!empty($_SESSION['login_user'])) {
                             <th>Description</th>
                             <th>Status</th>
                             <th>Logo</th>
+                            <th>StatusId</th>
+                            <th>ClientId</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="odd gradeX">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 4.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td>Win 95+</td>
-                            <td>Win 95+</td>
-                        </tr>
-                        <tr class="odd gradeC">
-                            <td>Trident</td>
-                            <td>Internet
-                                Explorer 5.0
-                            </td>
-                            <td>Win 95+</td>
-                            <td>Win 95+</td>
-                            <td>Win 95+</td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>

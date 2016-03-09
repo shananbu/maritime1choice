@@ -92,7 +92,7 @@ if (!empty($_SESSION['login_user'])) {
                 $rows[] = $r;
             }
             echo json_encode($rows);
-        }else if ($action == 'addCareers') {
+        } else if ($action == 'addCareers') {
             $jobTitle = addslashes($_POST['jobTitle']);
             $location = addslashes($_POST['location']);
             $qualification = addslashes($_POST['qualification']);
@@ -124,6 +124,40 @@ if (!empty($_SESSION['login_user'])) {
             }
         } else if ($action == 'getAllCareers') {
             $sql = "SELECT * FROM Careers order by createdDate, updatedDate desc";
+            $result = mysqli_query($iCon, $sql);
+            $rows = array();
+            while ($r = mysqli_fetch_assoc($result)) {
+                $rows[] = $r;
+            }
+            echo json_encode($rows);
+        }else if ($action == 'addClient') {
+            $clientName = addslashes($_POST['clientName']);
+            $referenceUrl = addslashes($_POST['referenceUrl']);
+            $clientStatus = addslashes($_POST['clientStatus']);
+            $clientDescription = addslashes($_POST['clientDescription']);
+            $clientLogo = addslashes($_POST['clientLogo']);
+
+            $clientId = addslashes($_POST['clientId']);
+
+            if (!empty($clientId)) {
+                $sql = "UPDATE Client SET name = '$clientName' , referenceUrl = '$referenceUrl', description = '$clientDescription', status = $clientStatus, updatedDate =  now() WHERE ID ='$clientId' ";
+                if ($conn->query($sql) == TRUE) {
+                    echo "News updated successfully.";
+                } else {
+                    echo "Error while updating news.";
+                }
+            } else {
+                $sql = "INSERT INTO Client (name, referenceUrl, description, status, createdDate)
+                        VALUES ('$clientName', '$referenceUrl', '$clientDescription', $clientStatus, now())";
+                echo $sql;
+                if ($conn->query($sql) == TRUE) {
+                    echo "Client created successfully.";
+                } else {
+                    echo "Error while adding client.";
+                }
+            }
+        } else if ($action == 'getAllClients') {
+            $sql = "SELECT * FROM Client order by createdDate, updatedDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
