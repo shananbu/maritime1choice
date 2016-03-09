@@ -135,7 +135,6 @@ if (!empty($_SESSION['login_user'])) {
             $referenceUrl = addslashes($_POST['referenceUrl']);
             $clientStatus = addslashes($_POST['clientStatus']);
             $clientDescription = addslashes($_POST['clientDescription']);
-            $clientLogo = addslashes($_POST['clientLogo']);
 
             $clientId = addslashes($_POST['clientId']);
 
@@ -149,7 +148,13 @@ if (!empty($_SESSION['login_user'])) {
             } else {
                 $sql = "INSERT INTO Client (name, referenceUrl, description, status, createdDate)
                         VALUES ('$clientName', '$referenceUrl', '$clientDescription', $clientStatus, now())";
-                echo $sql;
+
+                if(isset($_FILES['clientLogo'])){
+                    $file_name = $_FILES['clientLogo']['name'];
+                    $file_tmp =$_FILES['clientLogo']['tmp_name'];
+                    move_uploaded_file($file_tmp,"cImages/".rand()."_".$file_name);
+                }
+
                 if ($conn->query($sql) == TRUE) {
                     echo "Client created successfully.";
                 } else {

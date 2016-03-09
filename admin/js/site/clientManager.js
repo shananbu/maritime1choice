@@ -27,20 +27,24 @@ $(document).ready(function () {
         if ($('#clientName').val() == "" && $('#newsId').val() == "") {
             alert("Please enter client name.");
         } else {
-            var requestMap = new Object();
-            requestMap["clientName"] = $('#clientName').val();
-            requestMap["referenceUrl"] = $('#referenceUrl').val();
-            requestMap["clientStatus"] = $('#clientStatus').val();
-            requestMap["clientDescription"] = $('#clientDescription').val();
-            requestMap["clientLogo"] = $('#clientLogo').val();
-            requestMap["clientId"] = $('#clientId').val();
-            requestMap["action"] = 'addClient';
+            var fileData = $('#clientLogo').prop('files')[0];
+            var formData = new FormData();
+            formData.append('clientLogo', fileData);
+            formData.append('action', 'addClient');
+
+            formData.append('clientName', $('#clientName').val());
+            formData.append('referenceUrl', $('#referenceUrl').val());
+            formData.append('clientStatus', $('#clientStatus').val());
+            formData.append('clientDescription', $('#clientDescription').val());
+            formData.append('clientId', $('#clientId').val());
 
             var saveClient = $.ajax({
                 type: 'POST',
                 url: "adminController.php",
-                data: $.param(requestMap),
+                data: formData,
                 dataType: "text",
+                contentType: false,
+                processData: false,
                 success: function (resultData) {
                     alert(resultData);
                     getAllClients();
