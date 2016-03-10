@@ -5,10 +5,10 @@ $(document).ready(function () {
     var serviceTable = $('#serviceTable').DataTable({
         "bJQueryUI": true,
         "bAutoWidth": true,
-        "bSort": true,
+        "bSort": false,
         "bScrollCollapse": false,
         "sScrollY": "200px",
-        "sPaginationType": "full_numbers",
+        "sPaginationType": "simple_numbers",
         "columnDefs": [
             {
                 "targets": [ 4 ],
@@ -34,17 +34,20 @@ $(document).ready(function () {
         if ($('#serviceName').val() == "" && $('#serviceId').val() == "") {
             alert("Please enter category.");
         } else {
-            var requestMap = new Object();
-            requestMap["categoryId"] = $('#categoryId').val();
-            requestMap["serviceName"] = $('#serviceName').val();
-            requestMap["serviceStatus"] = $('#serviceStatus').val();
-            requestMap["serviceDesc"] = $('#serviceDesc').val();
-            requestMap["serviceId"] = $('#serviceId').val();
-            requestMap["action"] = 'addService';
+            var formData = new FormData();
+            formData.append('categoryId', $('#categoryId').val());
+            formData.append('serviceName', $('#serviceName').val());
+            formData.append('serviceStatus', $('#serviceStatus').val());
+            formData.append('serviceDesc', $('#serviceDesc').val());
+            formData.append('serviceId', $('#serviceId').val());
+            formData.append('action', 'addService');
+
             var saveService = $.ajax({
                 type: 'POST',
                 url: "adminController.php",
-                data: $.param(requestMap),
+                data: formData,
+                contentType: false,
+                processData: false,
                 dataType: "text",
                 success: function (resultData) {
                     alert(resultData);

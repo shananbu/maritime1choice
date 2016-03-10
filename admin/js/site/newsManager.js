@@ -3,10 +3,10 @@ $(document).ready(function () {
     var newsTable = $('#newsTable').DataTable({
         "bJQueryUI": true,
         "bAutoWidth": true,
-        "bSort": true,
+        "bSort": false,
         "bScrollCollapse": false,
         "sScrollY": "200px",
-        "sPaginationType": "full_numbers",
+        "sPaginationType": "simple_numbers",
         "columnDefs": [
             {
                 "targets": [ 4 ],
@@ -27,16 +27,19 @@ $(document).ready(function () {
         if ($('#newTitle').val() == "" && $('#newsId').val() == "") {
             alert("Please enter News title.");
         } else {
-            var requestMap = new Object();
-            requestMap["newTitle"] = $('#newTitle').val();
-            requestMap["newStatus"] = $('#newStatus').val();
-            requestMap["newDescription"] = $('#newDescription').val();
-            requestMap["newsId"] = $('#newsId').val();
-            requestMap["action"] = 'addNews';
+            var formData = new FormData();
+            formData.append('newTitle', $('#newTitle').val());
+            formData.append('newStatus', $('#newStatus').val());
+            formData.append('newDescription', $('#newDescription').val());
+            formData.append('newsId', $('#newsId').val());
+            formData.append('action', 'addNews');
+
             var saveNews = $.ajax({
                 type: 'POST',
                 url: "adminController.php",
-                data: $.param(requestMap),
+                data: formData,
+                contentType: false,
+                processData: false,
                 dataType: "text",
                 success: function (resultData) {
                     alert(resultData);
@@ -70,6 +73,7 @@ $(document).ready(function () {
         $('#newTitle').val("");
         $('#newStatus').val("");
         $('#newDescription').val("");
+        $('#newsId').val("");
     }
 
     function getAllNews() {

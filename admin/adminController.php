@@ -27,7 +27,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllCategories') {
-            $sql = "SELECT * FROM category order by createdDate, updatedDate desc";
+            $sql = "SELECT * FROM category order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
@@ -56,7 +56,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllBusinessService') {
-            $sql = "SELECT b.*, c.name categoryName FROM BusinessService b, Category c where b.categoryId = c.id order by createdDate, updatedDate desc";
+            $sql = "SELECT b.*, c.name categoryName FROM BusinessService b, Category c where b.categoryId = c.id order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
@@ -77,7 +77,6 @@ if (!empty($_SESSION['login_user'])) {
                 }
             } else {
                 $sql = "INSERT INTO News (title, description, status, createdDate) VALUES ('$newTitle', '$newDescription', $newStatus, now())";
-                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "News created successfully.";
                 } else {
@@ -85,7 +84,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllNews') {
-            $sql = "SELECT * FROM News order by createdDate, updatedDate desc";
+            $sql = "SELECT * FROM News order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
@@ -115,7 +114,6 @@ if (!empty($_SESSION['login_user'])) {
             } else {
                 $sql = "INSERT INTO Careers (title, location, qualification, experience, noofpositions, validity, description, status, createdDate)
                         VALUES ('$jobTitle', '$location', '$qualification', '$experience', '$numberOfPositions', '$validity', '$jobDescription', $jobStatus, now())";
-                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "News created successfully.";
                 } else {
@@ -123,7 +121,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllCareers') {
-            $sql = "SELECT * FROM Careers order by createdDate, updatedDate desc";
+            $sql = "SELECT * FROM Careers order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
@@ -139,21 +137,30 @@ if (!empty($_SESSION['login_user'])) {
             $clientId = addslashes($_POST['clientId']);
 
             if (!empty($clientId)) {
-                $sql = "UPDATE Client SET name = '$clientName' , referenceUrl = '$referenceUrl', description = '$clientDescription', status = $clientStatus, updatedDate =  now() WHERE ID ='$clientId' ";
-                if ($conn->query($sql) == TRUE) {
-                    echo "News updated successfully.";
-                } else {
-                    echo "Error while updating news.";
-                }
-            } else {
-                $sql = "INSERT INTO Client (name, referenceUrl, description, status, createdDate)
-                        VALUES ('$clientName', '$referenceUrl', '$clientDescription', $clientStatus, now())";
-
+                $logoFileName = "";
                 if(isset($_FILES['clientLogo'])){
                     $file_name = $_FILES['clientLogo']['name'];
                     $file_tmp =$_FILES['clientLogo']['tmp_name'];
-                    move_uploaded_file($file_tmp,"cImages/".rand()."_".$file_name);
+                    $logoFileName = "cImages/".rand()."_".$file_name;
+                    move_uploaded_file($file_tmp, $logoFileName);
                 }
+
+                $sql = "UPDATE Client SET name = '$clientName' , referenceUrl = '$referenceUrl', description = '$clientDescription', status = $clientStatus, logoFileName='$logoFileName', updatedDate =  now() WHERE ID ='$clientId' ";
+                if ($conn->query($sql) == TRUE) {
+                    echo "Client updated successfully.";
+                } else {
+                    echo "Error while updating Client.";
+                }
+            } else {
+                $logoFileName = "";
+                if(isset($_FILES['clientLogo'])){
+                    $file_name = $_FILES['clientLogo']['name'];
+                    $file_tmp =$_FILES['clientLogo']['tmp_name'];
+                    $logoFileName = "cImages/".rand()."_".$file_name;
+                    move_uploaded_file($file_tmp, $logoFileName);
+                }
+                $sql = "INSERT INTO Client (name, referenceUrl, description, status, logoFileName, createdDate)
+                        VALUES ('$clientName', '$referenceUrl', '$clientDescription', $clientStatus, '$logoFileName', now())";
 
                 if ($conn->query($sql) == TRUE) {
                     echo "Client created successfully.";
@@ -162,7 +169,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllClients') {
-            $sql = "SELECT * FROM Client order by createdDate, updatedDate desc";
+            $sql = "SELECT * FROM Client order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {
@@ -171,6 +178,8 @@ if (!empty($_SESSION['login_user'])) {
             echo json_encode($rows);
         }
     }
+    $conn = null;
+    mysqli_close($iCon);
 } else {
     echo "Session Expired!";
 }

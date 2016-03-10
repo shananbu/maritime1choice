@@ -3,10 +3,10 @@ $(document).ready(function () {
     var careerTable = $('#careerTable').DataTable({
         "bJQueryUI": true,
         "bAutoWidth": true,
-        "bSort": true,
+        "bSort": false,
         "bScrollCollapse": false,
         "sScrollY": "200px",
-        "sPaginationType": "full_numbers",
+        "sPaginationType": "simple_numbers",
         "columnDefs": [
             {
                 "targets": [ 8 ],
@@ -27,23 +27,27 @@ $(document).ready(function () {
         if ($('#jobTitle').val() == "" && $('#jobId').val() == "") {
             alert("Please enter Job title.");
         } else {
-            var requestMap = new Object();
-            requestMap["jobTitle"] = $('#jobTitle').val();
-            requestMap["location"] = $('#location').val();
-            requestMap["qualification"] = $('#qualification').val();
-            requestMap["experience"] = $('#experience').val();
-            requestMap["jobStatus"] = $('#jobStatus').val();
-            requestMap["numberOfPositions"] = $('#numberOfPositions').val();
-            requestMap["validity"] = $('#validity').val();
-            requestMap["jobDescription"] = $('#jobDescription').val();
-            requestMap["jobId"] = $('#jobId').val();
-            requestMap["action"] = 'addCareers';
+            var formData = new FormData();
+            formData.append('jobTitle', $('#jobTitle').val());
+            formData.append('location', $('#location').val());
+            formData.append('qualification', $('#qualification').val());
+            formData.append('experience', $('#experience').val());
+
+            formData.append('jobStatus', $('#jobStatus').val());
+            formData.append('numberOfPositions', $('#numberOfPositions').val());
+            formData.append('validity', $('#validity').val());
+            formData.append('jobDescription', $('#jobDescription').val());
+
+            formData.append('jobId', $('#jobId').val());
+            formData.append('action', 'addCareers');
 
             var saveCareer = $.ajax({
                 type: 'POST',
                 url: "adminController.php",
-                data: $.param(requestMap),
+                data: formData,
                 dataType: "text",
+                contentType: false,
+                processData: false,
                 success: function (resultData) {
                     alert(resultData);
                     getAllCareers();

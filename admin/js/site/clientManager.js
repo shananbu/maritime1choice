@@ -3,10 +3,10 @@ $(document).ready(function () {
     var clientTable = $('#clientTable').DataTable({
         "bJQueryUI": true,
         "bAutoWidth": true,
-        "bSort": true,
+        "bSort": false,
         "bScrollCollapse": false,
         "sScrollY": "200px",
-        "sPaginationType": "full_numbers",
+        "sPaginationType": "simple_numbers",
         "columnDefs": [
             {
                 "targets": [ 5 ],
@@ -57,7 +57,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#clientTable').on( 'click', 'tr', function () {
+    $('#clientTable').on( 'click', 'td:not(:last-child)', function () {
         if ( $(this).hasClass('selected') ) {
             $(this).removeClass('selected');
         } else {
@@ -95,7 +95,8 @@ $(document).ready(function () {
             success: function (resultData) {
                 clientTable.clear();
                 $.each(resultData, function (i, item) {
-                    clientTable.row.add([item.name, item.referenceUrl, item.description, getStatusById(item.status), item.logoFileName, item.status, item.id]).draw();
+                    var viewImage = "<img src='" + item.logoFileName +"'>"
+                    clientTable.row.add([item.name, item.referenceUrl, item.description, getStatusById(item.status), viewImage , item.status, item.id]).draw();
                 });
             }
         });
@@ -107,6 +108,5 @@ $(document).ready(function () {
     function getStatusById(status) {
         return (status == 1) ? 'Active' : 'InActive';
     }
-
 });
 
