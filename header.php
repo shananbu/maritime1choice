@@ -1,16 +1,17 @@
+<?php $page = addslashes($_GET['selected']);?>
 <div class="container">
     <div class="row">
-        <div class="col-sm-2 logo"><img src="images/logo.png"></div>
+        <div class="col-sm-2 logo"><a href="index.php?selected=1"><img src="images/logo.png"></a></div>
         <div class="col-sm-10 top_menu">
             <nav>
                 <ul>
-                    <li class="menu_active"><a href="index.php"> Home </a></li>
-                    <li><a href="aboutUs.php"> About Us </a></li>
-                    <li><a href="businessServices.php"> Business Services </a></li>
-                    <li><a href="newsAll.php"> News </a></li>
-                    <li><a href="careers.php"> Careers </a></li>
-                    <li><a href="ourClients.php"> Our Clients </a></li>
-                    <li><a href="contactUs.php"> Contact Us</a></li>
+                    <li <?php  if($page == 1) {?>class="menu_active" <?php } ?> ><a href="index.php?selected=1"> Home </a></li>
+                    <li <?php  if($page == 2) {?>class="menu_active" <?php } ?> ><a href="aboutUs.php?selected=2"> About Us </a></li>
+                    <li <?php  if($page == 3) {?>class="menu_active" <?php } ?> ><a href="businessServices.php?selected=3"> Business Services </a></li>
+                    <li <?php  if($page == 4) {?>class="menu_active" <?php } ?> ><a href="newsAll.php?selected=4"> News </a></li>
+                    <li <?php  if($page == 5) {?>class="menu_active" <?php } ?> ><a href="careers.php?selected=5"> Careers </a></li>
+                    <li <?php  if($page == 6) {?>class="menu_active" <?php } ?> ><a href="ourClients.php?selected=6"> Our Clients </a></li>
+                    <li <?php  if($page == 7) {?>class="menu_active" <?php } ?> ><a href="contactUs.php?selected=7"> Contact Us</a></li>
                 </ul>
             </nav>
         </div>
