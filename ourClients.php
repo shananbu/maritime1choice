@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 <head>
@@ -18,24 +19,7 @@
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <div class="wrapper">
   <header class="ful_row top_head">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2 logo"> <img src="images/logo.png"> </div>
-        <div class="col-sm-10 top_menu">
-          <nav>
-            <ul>
-              <li><a href="index.html"> Home </a></li>
-              <li><a href="about_us.html"> About Us </a></li>
-              <li><a href="business_services.html"> Business Services </a></li>
-              <li><a href="news.html"> News </a></li>
-              <li><a href="careers.html"> Careers </a></li>
-              <li class="menu_active"><a href="our_clients.html"> Our Clients </a></li>
-              <li><a href="contact_us.html"> Contact Us</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
+      <?php include("header.php"); ?>
   </header>
   <section class="inner_banner in_about">
     <div class="container inn_info">
@@ -112,68 +96,7 @@
   </section>
   
   <footer class="ful_row ad_pa">
-    <div class="footer_1 ful_row">
-      <div class="container">
-        <div class="row">
-          <nav class="foot_col_1 foot_nav">
-            <h2>Quick Links</h2>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Midas</a></li>
-              <li><a href="#">Clients</a></li>
-              <li><a href="#">Contact us</a></li>
-            </ul>
-          </nav>
-          <nav class="foot_col_2 foot_nav">
-            <h2>Our Services</h2>
-            <ul>
-              <li><a href="#">Marine IT Solutions</a></li>
-              <li><a href="#">Marine Software Solutions</a></li>
-              <li><a href="#">KPO services</a></li>
-              <li><a href="#">Miscellaneous</a></li>
-            </ul>
-          </nav>
-          <div class="foot_col_4 foot_contact foot_nav">
-            <h2>Reach us</h2>
-            <div class="ful_row"> <i class="fa fa-map-marker"></i>
-              <div class="cont_p">
-                <h1>India</h1>
-                <p> 54, Sample Nagar, 
-                  Samaple Street, 
-                  Sample City </p>
-              </div>
-            </div>
-            <div class="ful_row">
-              <div class="in_cont"> <i class="fa fa-phone"></i>
-                <div class="cont_p">
-                  <h1>Phone</h1>
-                  <p> +91 15482 12548 </p>
-                </div>
-              </div>
-              <div class="in_cont re_mar"> <i class="fa fa-envelope"></i>
-                <div class="cont_p">
-                  <h1>Mail</h1>
-                  <p> <a href="mailto:contact@companyname.com"> contact@companyname.com </a> </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="foot_col_5 foot_nav">
-            <h2>follow us</h2>
-            <ul>
-              <li> <a href="https://www.facebook.com/maritime1stchoice/"> <span> <i class="fa fa-facebook"></i> </span> Facebook </a> </li>
-              <li> <a href="#"> <span> <i class="fa fa-twitter"></i></span> twitter </a> </li>
-              <li> <a href="#"><span><i class="fa fa-linkedin"></i></span> linked in </a> </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer_2 ful_row">
-      <div class="container">
-        <div class="row">Copyright @ 2016 maritime1stchoice.com. All rights reserved </div>
-      </div>
-    </div>
+      <?php include("footer.php"); ?>
   </footer>
 </div>
 <script src="js/bootstrap.js"></script> 
