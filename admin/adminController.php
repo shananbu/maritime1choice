@@ -143,9 +143,11 @@ if (!empty($_SESSION['login_user'])) {
                     $file_tmp =$_FILES['clientLogo']['tmp_name'];
                     $logoFileName = "cImages/".rand()."_".$file_name;
                     move_uploaded_file($file_tmp, $logoFileName);
+                    $sql = "UPDATE Client SET  logoFileName='$logoFileName', updatedDate =  now() WHERE ID ='$clientId' ";
+                    $conn->query($sql);
                 }
 
-                $sql = "UPDATE Client SET name = '$clientName' , referenceUrl = '$referenceUrl', description = '$clientDescription', status = $clientStatus, logoFileName='$logoFileName', updatedDate =  now() WHERE ID ='$clientId' ";
+                $sql = "UPDATE Client SET name = '$clientName' , referenceUrl = '$referenceUrl', description = '$clientDescription', status = $clientStatus, updatedDate =  now() WHERE ID ='$clientId' ";
                 if ($conn->query($sql) == TRUE) {
                     echo "Client updated successfully.";
                 } else {

@@ -25,8 +25,9 @@ $(document).ready(function () {
 
     $('#saveOrUpdateNews').click(function () {
         if ($('#newTitle').val() == "" && $('#newsId').val() == "") {
-            alert("Please enter News title.");
+            $.alert("Please enter News title.");
         } else {
+            Common.showOverlay();
             var formData = new FormData();
             formData.append('newTitle', $('#newTitle').val());
             formData.append('newStatus', $('#newStatus').val());
@@ -42,13 +43,15 @@ $(document).ready(function () {
                 processData: false,
                 dataType: "text",
                 success: function (resultData) {
-                    alert(resultData);
+                    Common.hideOverlay();
+                    $.alert(resultData);
                     getAllNews();
                     reset();
                 }
             });
             saveNews.error(function () {
-                alert("Something went wrong while adding news");
+                Common.hideOverlay();
+                $.alert("Something went wrong while adding news");
             });
         }
     });
@@ -92,7 +95,7 @@ $(document).ready(function () {
             }
         });
         serviceCall.error(function () {
-            alert("Something went wrong while loading news");
+            $.alert("Something went wrong while loading news");
         });
     }
 

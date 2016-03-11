@@ -25,8 +25,9 @@ $(document).ready(function () {
 
     $('#saveOrUpdateClient').click(function () {
         if ($('#clientName').val() == "" && $('#newsId').val() == "") {
-            alert("Please enter client name.");
+            $.alert("Please enter client name.");
         } else {
+            Common.showOverlay();
             var fileData = $('#clientLogo').prop('files')[0];
             var formData = new FormData();
             formData.append('clientLogo', fileData);
@@ -46,13 +47,15 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false,
                 success: function (resultData) {
-                    alert(resultData);
+                    Common.hideOverlay();
+                    $.alert(resultData);
                     getAllClients();
                     reset();
                 }
             });
             saveClient.error(function () {
-                alert("Something went wrong while adding client");
+                Common.hideOverlay();
+                $.alert("Something went wrong while adding client");
             });
         }
     });
@@ -101,7 +104,7 @@ $(document).ready(function () {
             }
         });
         clientCall.error(function () {
-            alert("Something went wrong while loading client");
+            $.alert("Something went wrong while loading client");
         });
     }
 

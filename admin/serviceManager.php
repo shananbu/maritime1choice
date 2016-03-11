@@ -28,6 +28,8 @@ if (!empty($_SESSION['login_user'])) {
         <script src="js/texteditor/jquery-te-1.4.0.min.js"></script>
         <link href="js/texteditor/jquery-te-1.4.0.css" rel="stylesheet" type="text/css">
 
+        <script type="text/javascript" language="javascript" src="js/jquery-ui-1.11.2.min.js"></script>
+        <script src="js/site/common.js"></script>
         <script src="js/site/serviceManager.js"></script>
     </head>
     <body>

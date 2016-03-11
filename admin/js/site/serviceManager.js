@@ -32,8 +32,9 @@ $(document).ready(function () {
 
     $('#saveOrUpdateService').click(function () {
         if ($('#serviceName').val() == "" && $('#serviceId').val() == "") {
-            alert("Please enter category.");
+            $.alert("Please enter category.");
         } else {
+            Common.showOverlay();
             var formData = new FormData();
             formData.append('categoryId', $('#categoryId').val());
             formData.append('serviceName', $('#serviceName').val());
@@ -50,13 +51,15 @@ $(document).ready(function () {
                 processData: false,
                 dataType: "text",
                 success: function (resultData) {
-                    alert(resultData);
+                    Common.hideOverlay();
+                    $.alert(resultData);
                     getAllBusinessService();
                     reset();
                 }
             });
             saveService.error(function () {
-                alert("Something went wrong while adding service");
+                Common.hideOverlay();
+                $.alert("Something went wrong while adding service");
             });
         }
     });
@@ -102,7 +105,7 @@ $(document).ready(function () {
             }
         });
         serviceCall.error(function () {
-            alert("Something went wrong while loading services");
+            $.alert("Something went wrong while loading services");
         });
     }
 

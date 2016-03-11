@@ -24,8 +24,9 @@ $(document).ready(function () {
 
     $('#saveOrUpdateButton').click(function () {
         if ($('#categoryName').val() == "" && $('#categoryId').val() == "") {
-            alert("Please enter category.");
+            $.alert("Please enter category.");
         } else {
+            Common.showOverlay();
             var formData = new FormData();
             formData.append('categoryId', $('#categoryId').val());
             formData.append('categoryName', $('#categoryName').val());
@@ -40,13 +41,15 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false,
                 success: function (resultData) {
-                    alert(resultData);
+                    Common.hideOverlay();
+                    $.alert(resultData);
                     getAllCategories();
                     reset();
                 }
             });
             saveCategory.error(function () {
-                alert("Something went wrong while adding category");
+                Common.hideOverlay();
+                $.alert("Something went wrong while adding category");
             });
         }
     });
@@ -88,7 +91,7 @@ $(document).ready(function () {
             }
         });
         saveCategory.error(function () {
-            alert("Something went wrong while loading category");
+            $.alert("Something went wrong while loading category");
         });
     }
 

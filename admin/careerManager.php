@@ -24,7 +24,9 @@ if (!empty($_SESSION['login_user'])) {
         <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
         <!-- jq_table script end-->
+        <script type="text/javascript" language="javascript" src="js/jquery-ui-1.11.2.min.js"></script>
 
+        <script src="js/site/common.js"></script>
         <script src="js/site/careerManager.js"></script>
     </head>
     <body>

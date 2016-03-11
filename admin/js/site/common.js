@@ -12,8 +12,6 @@ Common = {
                 'top': 0,
                 'left': 0,
                 'background-color': 'black',
-                /*                'background-image': 'url(images/ajaxloader.gif)',
-                 'background-repeat': 'no-repeat',*/
                 'width': '100%',
                 'z-index': 5000
             });
@@ -23,4 +21,16 @@ Common = {
         $("#overlay").remove();
     }
 }
+
+$.extend({alert: function (message) {
+    $("<div></div>").dialog( {
+        buttons: { "Ok": function () { $(this).dialog("close"); } },
+        close: function (event, ui) { $(this).remove(); },
+        resizable: false,
+        title: "Maritime1stchoice",
+        modal: false,
+        closeOnEscape: false,
+        open: function(event, ui) { $(".ui-dialog-titlebar-close", ui.dialog | ui).hide(); }
+    }).text(message);
+}});
 

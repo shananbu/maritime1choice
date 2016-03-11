@@ -25,8 +25,9 @@ $(document).ready(function () {
     setNow();
     $('#saveOrUpdateJob').click(function () {
         if ($('#jobTitle').val() == "" && $('#jobId').val() == "") {
-            alert("Please enter Job title.");
+            $.alert("Please enter Job title.");
         } else {
+            Common.showOverlay();
             var formData = new FormData();
             formData.append('jobTitle', $('#jobTitle').val());
             formData.append('location', $('#location').val());
@@ -49,13 +50,15 @@ $(document).ready(function () {
                 contentType: false,
                 processData: false,
                 success: function (resultData) {
-                    alert(resultData);
+                    Common.hideOverlay();
+                    $.alert(resultData);
                     getAllCareers();
                     reset();
                 }
             });
             saveCareer.error(function () {
-                alert("Something went wrong while adding career");
+                Common.hideOverlay();
+                $.alert("Something went wrong while adding career");
             });
         }
     });
@@ -113,7 +116,7 @@ $(document).ready(function () {
             }
         });
         careerCall.error(function () {
-            alert("Something went wrong while loading career");
+            $.alert("Something went wrong while loading career");
         });
     }
 

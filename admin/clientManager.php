@@ -23,8 +23,10 @@ if (!empty($_SESSION['login_user'])) {
         <link href="css/demo_table.css" rel="stylesheet" type="text/css">
         <link href="css/jquery-ui-1.8.4.custom.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+        <script type="text/javascript" language="javascript" src="js/jquery-ui-1.11.2.min.js"></script>
 
         <!-- jq_table script end-->
+        <script src="js/site/common.js"></script>
         <script src="js/site/clientManager.js"></script>
     </head>
     <body>
