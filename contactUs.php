@@ -13,6 +13,9 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
       <![endif]-->
+      <script src="js/site/contactUs.js"></script>
+      <script src="admin/js/site/common.js"></script>
+
 </head>
 
 <body>
@@ -61,23 +64,23 @@
           <h1 class="h_3">Contact form</h1>
           <div class="row">
             <div class="col-sm-6">
-              <input type="text" placeholder="Name">
+              <input type="text" placeholder="Name" id="personName">
             </div>
             <div class="col-sm-6">
-              <input type="text" placeholder="Phone Number">
+              <input type="text" placeholder="Phone Number" id="phoneNumber">
             </div>
             <div class="col-sm-6">
-              <input type="text" placeholder="Email">
+              <input type="email" placeholder="Email" id="personEmail">
             </div>
             <div class="col-sm-6">
-              <input type="text" placeholder="subject">
+              <input type="text" placeholder="subject" id="contactSubject">
             </div>
             <div class="col-sm-12">
-              <textarea placeholder="Comments"></textarea>
+              <textarea placeholder="Comments" id="comments"></textarea>
             </div>
             <div class="col-sm-12">
-              <input type="button" value="submit">
-              <input type="reset" value="clear">
+              <input type="button" value="submit" id="sendContactMail">
+              <input type="reset" value="clear" id="clearContactForm">
             </div>
           </div>
         </div>

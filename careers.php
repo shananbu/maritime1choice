@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include("admin/config.php"); ?>
 <!doctype html>
 <html>
 <head>
@@ -39,96 +40,25 @@
   <section class="inner_wrapper ad_pa careers_list">
     <div class="container">
       <div class="row">
-        <h1 class="h_1">Careers at maritime 1st choice</h1>
-        <p class="te_ali_cen"> View our job oppurtunities below. To see more info click the "More Info" button. </p>
+        <h1 class="h_1">Careers at maritime1stchoice</h1>
+        <p class="te_ali_cen"> View our job Opportunities below. To see more info click the "More Info" button. </p>
         <section class="cus_accor_1">
         <article>
         <div class="panel-group" id="accordion">
-          <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading" data-parent="#accordion" href="#collapseOne"> <span>Server - San Francisco, CA </span> <b>More Info</b> </a>
+            <?php
+            $sql = "SELECT * FROM Careers where status = 1 order by createdDate desc";
+            $result = mysqli_query($iCon, $sql);
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+          <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading" data-parent="#accordion" href="#collapseOne"> <span> <?php echo $row['title']?>, <?php echo $row['location']?> </span> <b>More Info</b> </a>
             <div id="collapseOne" class="panel-collapse collapse in">
               <div class="job_desc">
-                <h1>Desciption</h1>
-                <p> Responsible for coordinating entire station and communicating with front and back-of-the-house personnel to provide a dining experience that meets or exceeds guest expectations. Processes guest orders to ensure that all items are prepared properly and on a timely basis. Observes diners to ensure that guests are satisfied with the food and service. </p>
-              </div>
-              <div class="job_req">
-                <h1>Requirements</h1>
-                <ul>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                </ul>
+                <h1>Job Description</h1>
+                <p> <?php echo $row['description']?> </p>
               </div>
             </div>
           </div>
-          <div class="panel panel-default"> <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span>Bartender - San Francisco, CA</span> <b>More Info</b> </a>
-            <div id="collapseTwo" class="panel-collapse  collapse">
-              <div class="job_desc">
-                <h1>Desciption</h1>
-                <p> Responsible for coordinating entire station and communicating with front and back-of-the-house personnel to provide a dining experience that meets or exceeds guest expectations. Processes guest orders to ensure that all items are prepared properly and on a timely basis. Observes diners to ensure that guests are satisfied with the food and service. </p>
-              </div>
-              <div class="job_req">
-                <h1>Requirements</h1>
-                <ul>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapseThree"><span>Busser - San Francisco, CA </span> <b>More Info</b> </a>
-            <div id="collapseThree" class="panel-collapse collapse">
-              <div class="job_desc">
-                <h1>Desciption</h1>
-                <p> Responsible for coordinating entire station and communicating with front and back-of-the-house personnel to provide a dining experience that meets or exceeds guest expectations. Processes guest orders to ensure that all items are prepared properly and on a timely basis. Observes diners to ensure that guests are satisfied with the food and service. </p>
-              </div>
-              <div class="job_req">
-                <h1>Requirements</h1>
-                <ul>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapsefour"><span>Host - San Francisco, CA</span> <b>More Info</b> </a>
-            <div id="collapsefour" class="panel-collapse collapse">
-              <div class="job_desc">
-                <h1>Desciption</h1>
-                <p> Responsible for coordinating entire station and communicating with front and back-of-the-house personnel to provide a dining experience that meets or exceeds guest expectations. Processes guest orders to ensure that all items are prepared properly and on a timely basis. Observes diners to ensure that guests are satisfied with the food and service. </p>
-              </div>
-              <div class="job_req">
-                <h1>Requirements</h1>
-                <ul>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapsefive"><span>Bartender - Charleston, SC </span> <b>More Info</b> </a>
-            <div id="collapsefive" class="panel-collapse collapse">
-              <div class="job_desc">
-                <h1>Desciption</h1>
-                <p> Responsible for coordinating entire station and communicating with front and back-of-the-house personnel to provide a dining experience that meets or exceeds guest expectations. Processes guest orders to ensure that all items are prepared properly and on a timely basis. Observes diners to ensure that guests are satisfied with the food and service. </p>
-              </div>
-              <div class="job_req">
-                <h1>Requirements</h1>
-                <ul>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                  <li> Competitive base salary, full benefits </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
           </article>
           </section>
         </div>

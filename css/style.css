@@ -1048,7 +1048,7 @@ body {
 .cont_list li i.fa-envelope {
 	font-size: 22px;
 }
-.cont_form input[type="text"], .cont_form textarea {
+.cont_form input[type="text"], .cont_form textarea, input[type="email"] {
 	width: 100%;
 	display: block;
 	padding: 15px 10px;

@@ -49,7 +49,7 @@
                 <ul>
                     <li> <a target="_blank" href="https://www.facebook.com/maritime1stchoice/"> <span> <i class="fa fa-facebook"></i> </span> Facebook </a> </li>
                     <li> <a target="_blank" href="#"> <span> <i class="fa fa-twitter"></i></span> twitter </a> </li>
-                    <li> <a target="_blank" href="#"><span><i class="fa fa-linkedin"></i></span> linked in </a> </li>
+                    <li> <a target="_blank" href="https://www.linkedin.com/company/maritime1st-choice?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A9386541%2Cidx%3A2-1-4%2CtarId%3A1457672387188%2Ctas%3Amaritime+1st+Choice"><span><i class="fa fa-linkedin"></i></span> linked in </a> </li>
                 </ul>
             </div>
         </div>

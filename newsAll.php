@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include("admin/config.php"); ?>
 <!doctype html>
 <html>
 <head>
@@ -42,110 +43,38 @@
         <div class="col-sm-9 inner_news">
           <ul>
            <!-- Latest News 1 start  -->
-                        
-          
-            <li>
-              <div class="new_date"><b>25</b> <span>Mar</span> </div>
-              <div class="new_panel">
-                <h1>Etiam accumsan massa minec luctus nisl feugiat vita</h1>
-                <p> Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. <br>
-                  <br>
-                  Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. </p>
-                <div class="news_footer row">
-                  <div class="col-sm-6 news_pos_pro">
-                    <figure> <img src="images/profile.png">
-                      <figcaption> Posted By <span> Roman Reigns </span> </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-sm-6 news_pos_pro news_pos_dat">
-                    <figure> <i class="fa fa-calendar-check-o"></i>
-                      <figcaption> 15 Feb 2016 </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- Latest News 1 end  --> 
-             <!-- Latest News 2 start  -->
-            <li>
-              <div class="new_date"><b>25</b> <span>Mar</span> </div>
-              <div class="new_panel">
-                <h1>Etiam accumsan massa minec luctus nisl feugiat vita</h1>
-                <p> Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. <br>
-                  <br>
-                  Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. </p>
-                <div class="news_footer row">
-                  <div class="col-sm-6 news_pos_pro">
-                    <figure> <img src="images/profile.png">
-                      <figcaption> Posted By <span> Roman Reigns </span> </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-sm-6 news_pos_pro news_pos_dat">
-                    <figure> <i class="fa fa-calendar-check-o"></i>
-                      <figcaption> 15 Feb 2016 </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- Latest News 2 end  --> 
-             <!-- Latest News 3 start  -->
-            <li>
-              <div class="new_date"><b>25</b> <span>Mar</span> </div>
-              <div class="new_panel">
-                <h1>Etiam accumsan massa minec luctus nisl feugiat vita</h1>
-                <p> Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. <br>
-                  <br>
-                  Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. </p>
-                <div class="news_footer row">
-                  <div class="col-sm-6 news_pos_pro">
-                    <figure> <img src="images/profile.png">
-                      <figcaption> Posted By <span> Roman Reigns </span> </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-sm-6 news_pos_pro news_pos_dat">
-                    <figure> <i class="fa fa-calendar-check-o"></i>
-                      <figcaption> 15 Feb 2016 </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- Latest News 3 end  --> 
-             <!-- Latest News 4 start  -->
-            <li>
-              <div class="new_date"><b>25</b> <span>Mar</span> </div>
-              <div class="new_panel">
-                <h1>Etiam accumsan massa minec luctus nisl feugiat vita</h1>
-                <p> Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. <br>
-                  <br>
-                  Due to the downward trend in the World economy, shipping companies are operating in tighter margins and looking for ways to scale up their savings. Once overlooked, Marine IT services like Database up keeping have started to gain momentum. Shipping companies have started realizing the vitality of retaining good database onboard that leads to enormous savings in the operating budget. </p>
-                <div class="news_footer row">
-                  <div class="col-sm-6 news_pos_pro">
-                    <figure> <img src="images/profile.png">
-                      <figcaption> Posted By <span> Roman Reigns </span> </figcaption>
-                    </figure>
-                  </div>
-                  <div class="col-sm-6 news_pos_pro news_pos_dat">
-                    <figure> <i class="fa fa-calendar-check-o"></i>
-                      <figcaption> 15 Feb 2016 </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <!-- Latest News 4 end  --> 
 
+              <?php
+              $sql = "SELECT title, description, DAY(createdDate) dy, SUBSTRING(MONTHNAME(createdDate), 1, 3) mname, DATE_FORMAT(createdDate, '%d-%b-%Y') postDate FROM News where status = 1 order by createdDate desc";
+              $result = mysqli_query($iCon, $sql);
+              while ($row = mysqli_fetch_assoc($result)) {
+              ?>
+
+            <li>
+              <div class="new_date"><b><?php echo $row['dy']?></b> <span><?php echo $row['mname']?></span> </div>
+              <div class="new_panel">
+                <h1><?php echo $row['title']?></h1>
+                <p> <?php echo $row['description']?> </p>
+                <div class="news_footer row">
+                  <div class="col-sm-6 news_pos_pro">
+                    <!--<figure> <img src="images/profile.png">
+                      <figcaption> Posted By <span> Roman Reigns </span> </figcaption>
+                    </figure>-->
+                  </div>
+                  <div class="col-sm-6 news_pos_pro news_pos_dat">
+                    <figure> <i class="fa fa-calendar-check-o"></i>
+                      <figcaption> <?php echo $row['postDate']?></figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <?php } ?>
+            <!-- Latest News 1 end  --> 
           </ul>
         </div>
         <div class="col-sm-3 aside_right">
-          <h1>Our services</h1>
-          <ul>
-            <li><a href="business_services.html">Marine IT Solutions</a></li>
-            <li><a href="business_services.html">Marine Software Solutions</a></li>
-            <li><a href="business_services.html">KPO services</a></li>
-            <li><a href="business_services.html">Miscellaneous</a></li>
-          </ul>
+            <?php include("ourServices.php"); ?>
         </div>
       </div>
     </div>

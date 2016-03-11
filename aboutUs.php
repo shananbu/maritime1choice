@@ -48,13 +48,7 @@
             In line with our desire to provide quality service at faster pace blended with competitive pricing, Maritime1stChoice branched out to India in 2015 at Tamil Nadu. Companies’ vision is to serve the shipping companies IT service needs at a faster pace and remain as a one stop shop solution provider. Company is driven and governed by values, Quality Management system, Upgraded Technology, above all skilled and inquisitive individuals. </p>
         </div>
         <div class="col-sm-3 aside_right">
-          <h1>Our services</h1>
-          <ul>
-            <li><a href="business_services.html">Marine IT Solutions</a></li>
-            <li><a href="business_services.html">Marine Software Solutions</a></li>
-            <li><a href="business_services.html">KPO services</a></li>
-            <li><a href="business_services.html">Miscellaneous</a></li>
-          </ul>
+            <?php include("ourServices.php"); ?>
         </div>
       </div>
     </div>

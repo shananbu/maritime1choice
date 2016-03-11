@@ -43,7 +43,7 @@ if (!empty($_SESSION['login_user'])) {
                 <div class="panel_row form_li">
                     <div class="row">
                         <div class="col-sm-4">
-                            <label> Job Title : </label>
+                            <label> Job Title / Role : </label>
                             <input type="text" placeholder="Enter Job Title" id="jobTitle">
                             <input type="hidden" id="jobId">
                         </div>

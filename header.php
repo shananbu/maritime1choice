@@ -1,4 +1,9 @@
-<?php $page = addslashes($_GET['selected']);?>
+<?php
+$page = 3;
+ if (isset($_GET['selected'])) {
+    $page = addslashes($_GET['selected']);
+}
+?>
 <div class="container">
     <div class="row">
         <div class="col-sm-2 logo"><a href="index.php?selected=1"><img src="images/logo.png"></a></div>
