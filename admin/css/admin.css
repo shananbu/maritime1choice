@@ -187,7 +187,7 @@ body {
 	box-shadow:1px 1px 3px rgba(0,0,0,0.5);
 }
 .logo{
-	background:#22BAA0;
+	background: #d5eee9;
 	color:#ffffff;
 	float:left;
 	padding:10px;
@@ -197,6 +197,7 @@ body {
 	width:17%;
 	text-align:center;
 }
+
 
 .top_right{
 float:right;

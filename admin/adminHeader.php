@@ -1,4 +1,4 @@
-<div class="logo"> Logo</div>
+<div class="logo"> <img src="../images/logo.png"></div>
 <div class="menu_hide"><i class="fa fa-bars" id="menu-toggle"></i></div>
 <div class="top_right">
     <ul>
