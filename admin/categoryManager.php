@@ -59,6 +59,17 @@ if (!empty($_SESSION['login_user'])) {
                                     <option value="0">InActive</option>
                                 </select>
                             </div>
+                            <div class="ful_row">
+                                <label> Display Order :</label>
+                                <input type="text" placeholder="Enter display order" id="displayOrder">
+                            </div>
+                            <div class="ful_row">
+                                <label> Show in Home Page :</label>
+                                <select id="showInHome">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
                             <div class="ful_row te_al_cen btn_pan">
                                 <input type="button" value="save" name="saveOrUpdateButton" id="saveOrUpdateButton">
                                 <input type="button" value="clear" class="res_btn" id="resetCategoryButton">
@@ -71,8 +82,11 @@ if (!empty($_SESSION['login_user'])) {
                                     <tr>
                                         <th>Category</th>
                                         <th>Status</th>
+                                        <th>Display Order</th>
+                                        <th>Show in Home</th>
                                         <th>StatusID</th>
                                         <th>CategoryID</th>
+                                        <th>Show in HomeID</th>
                                     </tr>
                                     </thead>
                                 </table>

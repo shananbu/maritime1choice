@@ -71,7 +71,11 @@ if (!empty($_SESSION['login_user'])) {
                                 <option value="0">InActive</option>
                             </select>
                         </div>
-                        <div class="col-sm-12 ad_top_mar">
+                        <div class="col-sm-4">
+                            <label> Display Order :</label>
+                            <input type="text" placeholder="Enter display order" id="displayOrder">
+                        </div>
+                        <div class="col-sm-8 ad_top_mar">
                             <label> Description :</label>
                             <textarea id="serviceDesc"></textarea>
                         </div>
@@ -89,6 +93,7 @@ if (!empty($_SESSION['login_user'])) {
                             <th>Service</th>
                             <th>Description</th>
                             <th>Status</th>
+                            <th>Display Order</th>
                             <th>StatusId</th>
                             <th>ServiceId</th>
                             <th>CategoryId</th>

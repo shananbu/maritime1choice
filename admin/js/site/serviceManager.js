@@ -11,17 +11,17 @@ $(document).ready(function () {
         "sPaginationType": "simple_numbers",
         "columnDefs": [
             {
-                "targets": [ 4 ],
-                "visible": false,
-                "searchable": false
-            },
-            {
                 "targets": [ 5 ],
                 "visible": false,
                 "searchable": false
             },
             {
                 "targets": [ 6 ],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [ 7 ],
                 "visible": false,
                 "searchable": false
             }
@@ -41,6 +41,7 @@ $(document).ready(function () {
             formData.append('serviceStatus', $('#serviceStatus').val());
             formData.append('serviceDesc', $('#serviceDesc').val());
             formData.append('serviceId', $('#serviceId').val());
+            formData.append('displayOrder', $('#displayOrder').val());
             formData.append('action', 'addService');
 
             var saveService = $.ajax({
@@ -69,11 +70,12 @@ $(document).ready(function () {
             $(this).removeClass('selected');
         } else {
             var row = serviceTable.row(this).data();
-            $( "#categoryId" ).val(row[6]);
-            $( "#serviceId" ).val(row[5]);
-            $( "#serviceStatus" ).val(row[4]);
+            $( "#categoryId" ).val(row[7]);
+            $( "#serviceId" ).val(row[6]);
+            $( "#serviceStatus" ).val(row[5]);
             $( "#serviceName" ).val(row[1]);
             $( "#serviceDesc" ).val(row[2]);
+            $( "#displayOrder" ).val(row[4]);
         }
     } );
 
@@ -87,6 +89,8 @@ $(document).ready(function () {
         $('#serviceName').val("");
         $('#serviceStatus').val("");
         $('#serviceDesc').val("");
+        $( "#displayOrder" ).val("");
+
     }
 
     function getAllBusinessService() {
@@ -100,7 +104,7 @@ $(document).ready(function () {
             success: function (resultData) {
                 serviceTable.clear();
                 $.each(resultData, function (i, item) {
-                    serviceTable.row.add([item.categoryName, item.name, item.description, getStatusById(item.status), item.status, item.id, item.categoryId]).draw();
+                    serviceTable.row.add([item.categoryName, item.name, item.description, getStatusById(item.status), item.displayOrder, item.status, item.id, item.categoryId]).draw();
                 });
             }
         });

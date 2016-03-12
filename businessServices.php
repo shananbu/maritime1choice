@@ -56,7 +56,7 @@
         <section class="col-sm-9">
           <div class="serv_list tab-content">
               <?php
-              $catSql = "SELECT id, name FROM category where status = 1";
+              $catSql = "SELECT id, name FROM category where status = 1 order by displayOrder";
               $catRowNum = 1;
               $catResult = mysqli_query($iCon, $catSql);
               while ($catRow = mysqli_fetch_assoc($catResult)) {
@@ -64,7 +64,7 @@
               <div id="service_<?php echo $catRow['id']?>" class="<?php if ($catRowNum == 1) { ?>in active tab-pane <?php } else { ?>  tab-pane fade <?php }?>">
                   <h1><?php echo $catRow['name'] ?></h1>
                   <?php
-                  $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id'];
+                  $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id']." order by displayOrder";
                   $result = mysqli_query($iCon, $sql);
                   while ($row = mysqli_fetch_assoc($result)) {
                   ?>

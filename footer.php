@@ -14,7 +14,7 @@
                 <h2>Our Services</h2>
                 <ul>
                     <?php
-                    $sql = "SELECT * FROM Category where status = 1";
+                    $sql = "SELECT * FROM Category where status = 1 order by displayOrder";
                     $result = mysqli_query($iCon, $sql);
                     while ($row = mysqli_fetch_assoc($result)) {
                     ?>

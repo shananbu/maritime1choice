@@ -23,11 +23,16 @@ insert into AdminLogin (firstName, designation, userName, password, createdDate)
 create table Category (
 	id bigint auto_increment,
 	name varchar(25),
+	displayOrder bigint,
+	hasToShowInHome bit,
 	status bit,
 	createdDate datetime,
 	updatedDate datetime,
 	constraint pk2 primary key(id)
 );
+
+-- alter table Category add column displayOrder bigint;
+-- alter table Category add column 	hasToShowInHome bit;
 
 -- drop table BusinessService;
 create table BusinessService (
@@ -35,12 +40,14 @@ create table BusinessService (
 	categoryId bigint,
 	name varchar(100),
 	description varchar(10000),
+	displayOrder bigint,
 	status bit,
 	createdDate datetime,
 	updatedDate datetime,
 	constraint pk3 primary key(id),
 	constraint fk1 foreign key (categoryId) references Category(id)
 );
+-- alter table BusinessService add column displayOrder bigint;
 
 -- drop table News;
 create table News (

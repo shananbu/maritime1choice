@@ -11,15 +11,18 @@ if (!empty($_SESSION['login_user'])) {
             $categoryName = addslashes($_POST['categoryName']);
             $categoryStatus = addslashes($_POST['categoryStatus']);
             $categoryId = addslashes($_POST['categoryId']);
+            $displayOrder = addslashes($_POST['displayOrder']);
+            $showInHome = addslashes($_POST['showInHome']);
+
             if (!empty($categoryId)) {
-                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, updatedDate=  now() WHERE ID ='$categoryId' ";
+                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, displayOrder='$displayOrder', hasToShowInHome=$showInHome, updatedDate=  now() WHERE ID ='$categoryId' ";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category updated successfully.";
                 } else {
                     echo "Error while updating Category.";
                 }
             } else {
-                $sql = "INSERT INTO category (name, status, createdDate) VALUES ('$categoryName', $categoryStatus, now())";
+                $sql = "INSERT INTO category (name, status, displayOrder, hasToShowInHome, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', $showInHome, now())";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category created successfully.";
                 } else {
@@ -40,15 +43,17 @@ if (!empty($_SESSION['login_user'])) {
             $serviceDesc = addslashes($_POST['serviceDesc']);
             $categoryId = addslashes($_POST['categoryId']);
             $serviceId = addslashes($_POST['serviceId']);
+            $displayOrder = addslashes($_POST['displayOrder']);
+
             if (!empty($serviceId)) {
-                $sql = "UPDATE BusinessService SET categoryId='$categoryId', name='$serviceName', status=$serviceStatus, description='$serviceDesc', updatedDate =  now() WHERE ID ='$serviceId' ";
+                $sql = "UPDATE BusinessService SET categoryId='$categoryId',  displayOrder='$displayOrder', name='$serviceName', status=$serviceStatus, description='$serviceDesc', updatedDate =  now() WHERE ID ='$serviceId' ";
                 if ($conn->query($sql) == TRUE) {
                     echo "Business Service updated successfully.";
                 } else {
                     echo "Error while updating BusinessService.";
                 }
             } else {
-                $sql = "INSERT INTO BusinessService (categoryId, name, description, status, createdDate) VALUES ($categoryId, '$serviceName', '$serviceDesc', $serviceStatus, now())";
+                $sql = "INSERT INTO BusinessService (categoryId, name, description, displayOrder, status, createdDate) VALUES ($categoryId, '$serviceName', '$serviceDesc', '$displayOrder', $serviceStatus, now())";
                 if ($conn->query($sql) == TRUE) {
                     echo "Business Service created successfully.";
                 } else {
