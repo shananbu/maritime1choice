@@ -48,7 +48,7 @@ if (!empty($_SESSION['login_user'])) {
                             </ul>
                         </div>
                     </textarea>
-                    <h1 class="h_2">For Job Service Type - 1: </h1>
+                    <h1 class="h_2">For Service Type - 1: </h1>
                     <textarea readonly>
                         <h1>Planned Maintenance Support:</h1>
                         <p>Planned Maintenance System (PMS) system allows a Ship owner or Operators to carry out the maintenance in intervals according to the manufactures and classification society requirements. PMS is also essential in maintaining a vessel/Ship/Fleet’s compliance with the regulations of International Safety Management Code. <br>
@@ -70,7 +70,7 @@ if (!empty($_SESSION['login_user'])) {
                             <li>Document Control/ Management systems etc.</li>
                         </ul>
                     </textarea>
-                    <h1 class="h_2">For Job Service Type - 2: </h1>
+                    <h1 class="h_2">For Service Type - 2: </h1>
                     <textarea readonly>
                         <h1>Inventory Management:</h1>
                         <p>To streamline and to scale up savings companies started to focus on various aspects of operation one such is Procurement and its allied activities. To optimize spending in procuring, Companies must have a visibility in ROB. Maritime1stChoice offers inventory management as a key takeaway for its Clients. </p>
