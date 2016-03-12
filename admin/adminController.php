@@ -112,7 +112,7 @@ if (!empty($_SESSION['login_user'])) {
             if (!empty($jobId)) {
                 $sql = "UPDATE Careers SET title = '$jobTitle' , location = '$location', qualification = '$qualification', experience = '$experience', noofpositions = '$numberOfPositions', validity = '$validity', description = '$jobDescription', status = $jobStatus, updatedDate =  now() WHERE ID ='$jobId' ";
                 if ($conn->query($sql) == TRUE) {
-                    echo "News updated successfully.";
+                    echo "Career updated successfully.";
                 } else {
                     echo "Error while updating news.";
                 }
@@ -120,9 +120,9 @@ if (!empty($_SESSION['login_user'])) {
                 $sql = "INSERT INTO Careers (title, location, qualification, experience, noofpositions, validity, description, status, createdDate)
                         VALUES ('$jobTitle', '$location', '$qualification', '$experience', '$numberOfPositions', '$validity', '$jobDescription', $jobStatus, now())";
                 if ($conn->query($sql) == TRUE) {
-                    echo "News created successfully.";
+                    echo "Career created successfully.";
                 } else {
-                    echo "Error while adding news.";
+                    echo "Error while adding career.";
                 }
             }
         } else if ($action == 'getAllCareers') {
