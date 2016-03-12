@@ -13,10 +13,13 @@
             <nav class="foot_col_2 foot_nav">
                 <h2>Our Services</h2>
                 <ul>
-                    <li><a href="#">Marine IT Solutions</a></li>
-                    <li><a href="#">Marine Software Solutions</a></li>
-                    <li><a href="#">KPO services</a></li>
-                    <li><a href="#">Miscellaneous</a></li>
+                    <?php
+                    $sql = "SELECT * FROM Category where status = 1";
+                    $result = mysqli_query($iCon, $sql);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <li><a href="businessServices.php#service_<?php echo $row['id']?>"><?php echo $row['name']?></a></li>
+                    <?php } ?>
                 </ul>
             </nav>
             <div class="foot_col_4 foot_contact foot_nav">

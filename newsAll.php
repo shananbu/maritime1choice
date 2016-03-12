@@ -45,12 +45,12 @@
            <!-- Latest News 1 start  -->
 
               <?php
-              $sql = "SELECT title, description, DAY(createdDate) dy, SUBSTRING(MONTHNAME(createdDate), 1, 3) mname, DATE_FORMAT(createdDate, '%d-%b-%Y') postDate FROM News where status = 1 order by createdDate desc";
+              $sql = "SELECT id, title, description, DAY(createdDate) dy, SUBSTRING(MONTHNAME(createdDate), 1, 3) mname, DATE_FORMAT(createdDate, '%d-%b-%Y') postDate FROM News where status = 1 order by createdDate desc";
               $result = mysqli_query($iCon, $sql);
               while ($row = mysqli_fetch_assoc($result)) {
               ?>
 
-            <li>
+            <li id="news_<?php echo $row['id']?>">
               <div class="new_date"><b><?php echo $row['dy']?></b> <span><?php echo $row['mname']?></span> </div>
               <div class="new_panel">
                 <h1><?php echo $row['title']?></h1>

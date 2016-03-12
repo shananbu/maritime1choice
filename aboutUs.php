@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include("admin/config.php"); ?>
 <!doctype html>
 <html>
 <head>

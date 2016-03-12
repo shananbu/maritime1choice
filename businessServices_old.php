@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-<?php include("admin/config.php"); ?>
 <!doctype html>
 <html>
 <head>
@@ -41,40 +40,63 @@
     <div class="container">
       <div class="row">
         <aside class="col-sm-3 aside_right">
-            <h1>business services</h1>
-            <ul>
-                <?php
-                $catSql = "SELECT id, name FROM category where status = 1";
-                $catRowNum = 1;
-                $catResult = mysqli_query($iCon, $catSql);
-                while ($catRow = mysqli_fetch_assoc($catResult)) {
-                    ?>
-                    <li <?php if ($catRowNum == 1) { ?>class="active"<?php } ?>><a data-toggle="tab" href="businessServices.php#service_<?php echo $catRow['id'] ?>"><?php echo $catRow['name'] ?></a></li>
-                    <?php $catRowNum ++; } ?>
-            </ul>
+          <h1>business services</h1>
+          <ul>
+            <li class="active"><a data-toggle="tab" href="#service_1">Marine IT Solutions</a></li>
+            <li><a data-toggle="tab" href="#service_2">Marine Software Solutions</a></li>
+            <li><a data-toggle="tab" href="#service_3">KPO services</a></li>
+            <li><a data-toggle="tab" href="#service_4">Miscellaneous</a></li>
+          </ul>
         </aside>
         <section class="col-sm-9">
           <div class="serv_list tab-content">
-              <?php
-              $catSql = "SELECT id, name FROM category where status = 1";
-              $catRowNum = 1;
-              $catResult = mysqli_query($iCon, $catSql);
-              while ($catRow = mysqli_fetch_assoc($catResult)) {
-              ?>
-              <div id="service_<?php echo $catRow['id']?>" class="<?php if ($catRowNum == 1) { ?>in active tab-pane <?php } else { ?>  tab-pane fade <?php }?>">
-                  <h1><?php echo $catRow['name'] ?></h1>
-                  <?php
-                  $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id'];
-                  $result = mysqli_query($iCon, $sql);
-                  while ($row = mysqli_fetch_assoc($result)) {
-                  ?>
-                  <article>
-                      <h1><?php echo $row['name'] ?></h1>
-                      <?php echo $row['description'] ?>
-                  </article>
-                  <?php } ?>
-              </div>
-              <?php $catRowNum ++; } ?>
+            <div id="service_1" class="in active tab-pane">
+              <h1>Marine IT Solutions</h1>
+              <article>
+                <h1>Planned Maintenance Support:</h1>
+                <p>Planned Maintenance System (PMS) system allows a Ship owner or Operators to carry out the maintenance in intervals according to the manufactures and classification society requirements. PMS is also essential in maintaining a vessel/Ship/Fleet’s compliance with the regulations of International Safety Management Code. <br>
+                  <br>
+                  Maritime 1st Choice provides a continuous technical support round the clock to the planned maintenance department and vessel staff’s in all the PMS Modules, especially in the following: </p>
+                <ul>
+                  <li>Maintenance system – Ship and Fleet</li>
+                  <li>Safety Module</li>
+                  <li>ISPS/SSP/Security Module</li>
+                  <li>Vessel Technical Manuals </li>
+                  <li>Surveys and certificates class society integration</li>
+                  <li>Inventory Management</li>
+                  <li>Safety Management</li>
+                  <li>Quality Management</li>
+                  <li>Crewing Management</li>
+                  <li>Crew payroll</li>
+                  <li>Self-assessment</li>
+                  <li>Energy and environmental management</li>
+                  <li>Document Control/ Management systems etc.</li>
+                </ul>
+              </article>
+              <article>
+                <h1>Inventory Management:</h1>
+                <p>To streamline and to scale up savings companies started to focus on various aspects of operation one such is Procurement and its allied activities. To optimize spending in procuring, Companies must have a visibility in ROB. Maritime1stChoice offers inventory management as a key takeaway for its Clients. </p>
+                <small>Two Types of service offered such as:</small>
+                <h2>1. Baseline Support:</h2>
+                <p> Qualified and Experienced Inventory Team will board the vessel in up keeping of the Ship spares in line with the company Stock up keeping policy if available or done according to Industry best practices. This service is done primarily for beginners who opt Inventory Management for the first time or for a new build. Stock data collected is uploaded in onboard application and report will be submitted. </p>
+                <h2>2. Inventory Audit:</h2>
+                <p> Stock Team will board the vessel to ensure the Stock up keeping is in compliance with the company stock up keeping policy or industry best practices. Audit will be done in each store location provided basis a report will be submitted. Spare Data Audited will be cross verified with the application to avoid any deviation. </p>
+              </article>
+              <article>
+                <h1>DB Building:</h1>
+                <p>Our dedicated team has splendid experience in carving out successful outcomes for all your Data oriented proposals. We help shipping companies in transformation of Data into asset by value addition. <br>
+                  <br>
+                  Once Database was ignored gains importance in the recent past. An error free Database is the need of the hour. Keeping in this mind, Maritime1stChoice has designed a state of the art Business process with a sequential approach in building a database. Our Database building process is explained below in a nutshell: </p>
+                <ul>
+                  <li>Understand Client Requirement – starting of the Project and every week Discuss with Client for the Updates.</li>
+                  <li>Hard copy Equipment Technical manuals conversion to Electronic copies.</li>
+                  <li>Data coded convert into exclusively designed template with the aid of E copies.</li>
+                  <li>Data Conversion by Highly Qualified Personnel-under Domain expertise Guidance.</li>
+                  <li>Coded data will be Quality checked at various levels. Three gatekeepers need to approve the data template for error free at each stage.</li>
+                  <li>Template reaches the Quality Assurance team for final evaluation of the Data coded. If found to be free of errors, Data will uploaded Client Specified Application, Database will be delivered as injection files or excel sheets as per the clients requirement. Thus Quality is given at most important in all aspects.</li>
+                </ul>
+              </article>
+            </div>
             <div id="service_2" class="tab-pane fade">
               <h1>Marine Software Solutions</h1>
               <article>
