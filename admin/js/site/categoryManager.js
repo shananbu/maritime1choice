@@ -37,6 +37,7 @@ $(document).ready(function () {
             formData.append('categoryStatus', $('#categoryStatus').val());
             formData.append('displayOrder', $('#displayOrder').val());
             formData.append('showInHome', $('#showInHome').val());
+            formData.append('categoryDesc', $('#categoryDesc').val());
 
             formData.append('action', 'addCategory');
 
@@ -72,6 +73,7 @@ $(document).ready(function () {
             $( "#categoryStatus" ).val(row[4]);
             $( "#displayOrder" ).val(row[2]);
             $( "#showInHome" ).val(row[6]);
+            $( "#categoryDesc" ).val(row[7]);
         }
     } );
 
@@ -84,6 +86,7 @@ $(document).ready(function () {
         $('#categoryId').val("");
         $( "#displayOrder" ).val("");
         $( "#showInHome" ).val("");
+        $( "#categoryDesc" ).val("");
     }
 
     function getAllCategories() {
@@ -97,7 +100,7 @@ $(document).ready(function () {
             success: function (resultData) {
                 categoryTable.clear();
                 $.each(resultData, function (i, item) {
-                    categoryTable.row.add([item.name, getStatusById(item.status), item.displayOrder, getShowInHomeById(item.hasToShowInHome), item.status, item.id, item.hasToShowInHome]).draw(false);
+                    categoryTable.row.add([item.name, getStatusById(item.status), item.displayOrder, getShowInHomeById(item.hasToShowInHome), item.status, item.id, item.hasToShowInHome, item.description]).draw(false);
                 });
             }
         });

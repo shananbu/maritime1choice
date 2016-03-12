@@ -13,16 +13,16 @@ if (!empty($_SESSION['login_user'])) {
             $categoryId = addslashes($_POST['categoryId']);
             $displayOrder = addslashes($_POST['displayOrder']);
             $showInHome = addslashes($_POST['showInHome']);
-
+            $description = addslashes($_POST['categoryDesc']);
             if (!empty($categoryId)) {
-                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, displayOrder='$displayOrder', hasToShowInHome=$showInHome, updatedDate=  now() WHERE ID ='$categoryId' ";
+                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, displayOrder='$displayOrder', hasToShowInHome=$showInHome, description='$description', updatedDate=  now() WHERE ID ='$categoryId' ";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category updated successfully.";
                 } else {
                     echo "Error while updating Category.";
                 }
             } else {
-                $sql = "INSERT INTO category (name, status, displayOrder, hasToShowInHome, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', $showInHome, now())";
+                $sql = "INSERT INTO category (name, status, displayOrder, hasToShowInHome, description, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', '$description', $showInHome, now())";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category created successfully.";
                 } else {

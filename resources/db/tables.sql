@@ -23,6 +23,7 @@ insert into AdminLogin (firstName, designation, userName, password, createdDate)
 create table Category (
 	id bigint auto_increment,
 	name varchar(25),
+	description varchar(5000),
 	displayOrder bigint,
 	hasToShowInHome bit,
 	status bit,
@@ -33,6 +34,7 @@ create table Category (
 
 -- alter table Category add column displayOrder bigint;
 -- alter table Category add column 	hasToShowInHome bit;
+-- alter table Category add column description varchar(5000);
 
 -- drop table BusinessService;
 create table BusinessService (

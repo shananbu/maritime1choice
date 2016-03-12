@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php include("admin/config.php"); ?>
 <!doctype html>
 <html>
 <head>
@@ -36,18 +37,19 @@
       <div class="row">
         <div class="home_service ad_pa">
           <h1 class="h_1">Our Services</h1>
-          <article class="col-sm-4"> <img src="images/img_1.jpg">
-            <h2 class="h_2">Marine IT Solutions</h2>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. </p>
-            <a href="#"  class="link_1"> <i class="fa fa-angle-double-right"></i> Read More</a> </article>
-          <article class="col-sm-4"> <img src="images/img_2.jpg">
-            <h2 class="h_2">Marine Software Solutions</h2>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. </p>
-            <a href="#"  class="link_1"> <i class="fa fa-angle-double-right"></i> Read More</a> </article>
-          <article class="col-sm-4"> <img src="images/img_3.jpg">
-            <h2 class="h_2">KPO services</h2>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever. </p>
-            <a href="#"  class="link_1"> <i class="fa fa-angle-double-right"></i> Read More</a> </article>
+
+            <?php
+            $catSql = "SELECT id, name, description FROM category where status = 1 and hasToShowInHome = 1 order by displayOrder";
+            $catRowNum = 1;
+            $catResult = mysqli_query($iCon, $catSql);
+            while ($catRow = mysqli_fetch_assoc($catResult)) { ?>
+
+                <article class="col-sm-4"> <img src="images/img_<?php echo $catRowNum; ?>.jpg">
+                    <h2 class="h_2"><?php echo $catRow['name'] ?></h2>
+                    <p> <?php echo $catRow['description'] ?> </p>
+                    <a href="businessServices.php#service_<?php echo $catRow['id'] ?>"  class="link_1"> <i class="fa fa-angle-double-right"></i> Read More</a>
+                </article>
+            <?php $catRowNum ++; } ?>
         </div>
         <div class="why_choose ad_pa">
           <div class="header_2">

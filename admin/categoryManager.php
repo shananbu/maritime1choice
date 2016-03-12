@@ -52,6 +52,10 @@ if (!empty($_SESSION['login_user'])) {
                                 <input type="text" placeholder="Enter Category" id="categoryName">
                                 <input type="hidden" id="categoryId">
                             </div>
+                            <div class="ful_row ad_top_mar">
+                                <label> Description :</label>
+                                <textarea id="categoryDesc"></textarea>
+                            </div>
                             <div class="ful_row">
                                 <label> Status :</label>
                                 <select id="categoryStatus">
@@ -87,6 +91,8 @@ if (!empty($_SESSION['login_user'])) {
                                         <th>StatusID</th>
                                         <th>CategoryID</th>
                                         <th>Show in HomeID</th>
+                                        <th>Description</th>
+
                                     </tr>
                                     </thead>
                                 </table>
