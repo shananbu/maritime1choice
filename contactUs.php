@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>contact us</title>
+<title>Contact us</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script src="js/jquery-1.12.0.js"></script>
