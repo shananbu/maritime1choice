@@ -43,6 +43,7 @@
     $clientsPerRow = 4;
     $sql = "SELECT * FROM Client where status = 1 order by name ";
     $result = mysqli_query($iCon, $sql);
+    $rowCount  = mysqli_num_rows($result);
     $clientNumber = 0;
     while ($row = mysqli_fetch_assoc($result)) {
     if ($clientNumber % $clientsPerRow == 0) {
@@ -61,7 +62,7 @@
                     </figure>
                 </div>
                 <?php
-                if ($clientNumber == ($clientsPerRow - 1)) {
+                if ( $rowCount == 1 || $clientNumber == ($clientsPerRow - 1)) {
                 ?>
             </div>
         </div>

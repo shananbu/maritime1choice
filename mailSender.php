@@ -1,12 +1,14 @@
 <?php
 $to = "shananbu@gmail.com";
-$subject = "This is subject";
+$subject = "Enquiry from ".addslashes($_POST['personName'])." about '".addslashes($_POST['contactSubject'])."'";
 
-$message = "<b>This is HTML message.</b>";
-$message .= "<h1>This is headline.</h1>";
+$message = "Hi,<br>";
+$message .= addslashes($_POST['comments']);
+$message .= "<br>Regards,";
+$message .= "<br>".addslashes($_POST['personName']);
 
 $header = "From:shananbu@gmail.com \r\n";
-$header = "Cc:shananbu@gmail.com \r\n";
+$header = "Cc:".addslashes($_POST['personEmail'])."\r\n";
 $header .= "MIME-Version: 1.0\r\n";
 $header .= "Content-type: text/html\r\n";
 

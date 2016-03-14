@@ -15,14 +15,15 @@ if (!empty($_SESSION['login_user'])) {
             $showInHome = addslashes($_POST['showInHome']);
             $description = addslashes($_POST['categoryDesc']);
             if (!empty($categoryId)) {
-                $sql = "UPDATE category SET name='$categoryName', status=$categoryStatus, displayOrder='$displayOrder', hasToShowInHome=$showInHome, description='$description', updatedDate=  now() WHERE ID ='$categoryId' ";
+                $sql = "UPDATE Category SET name='$categoryName', status=$categoryStatus, displayOrder='$displayOrder', hasToShowInHome=$showInHome, description='$description', updatedDate=  now() WHERE ID ='$categoryId' ";
                 if ($conn->query($sql) == TRUE) {
                     echo "Category updated successfully.";
                 } else {
                     echo "Error while updating Category.";
                 }
             } else {
-                $sql = "INSERT INTO category (name, status, displayOrder, hasToShowInHome, description, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', '$description', $showInHome, now())";
+                $sql = "INSERT INTO Category (name, status, displayOrder, description, hasToShowInHome, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', '$description', $showInHome, now())";
+                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "Category created successfully.";
                 } else {
@@ -30,7 +31,7 @@ if (!empty($_SESSION['login_user'])) {
                 }
             }
         } else if ($action == 'getAllCategories') {
-            $sql = "SELECT * FROM category order by createdDate desc";
+            $sql = "SELECT * FROM Category order by createdDate desc";
             $result = mysqli_query($iCon, $sql);
             $rows = array();
             while ($r = mysqli_fetch_assoc($result)) {

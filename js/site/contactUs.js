@@ -29,7 +29,7 @@ $(document).ready(function () {
                 }
             });
             saveCareer.error(function () {
-                Common.hideOverlay();
+                    Common.hideOverlay();
                 alert("Something went wrong while sending mail.");
             });
         }

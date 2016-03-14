@@ -9,7 +9,7 @@
 <h1>business services</h1>
 <ul>
     <?php
-    $catSql = "SELECT id, name FROM category where status = 1 order by displayOrder";
+    $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";
     $catRowNum = 1;
     $catResult = mysqli_query($iCon, $catSql);
     while ($catRow = mysqli_fetch_assoc($catResult)) {
