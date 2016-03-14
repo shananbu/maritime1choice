@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($count == 1) {
         session_start();
         $_SESSION['login_user'] = $myusername;
+        header_remove("location");
         header("location:adminHome.php");
     } else {
         $error = "Your Login Name or Password is invalid";
@@ -57,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label>Password :</label><input type="password" name="password" class="box"/><br/><br/>
                 <input type="submit" value=" Submit "/><br/>
             </form>
+            <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         </div>
     </section>
 </section>
