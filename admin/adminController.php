@@ -23,7 +23,6 @@ if (!empty($_SESSION['login_user'])) {
                 }
             } else {
                 $sql = "INSERT INTO Category (name, status, displayOrder, description, hasToShowInHome, createdDate) VALUES ('$categoryName', $categoryStatus, '$displayOrder', '$description', $showInHome, now())";
-                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "Category created successfully.";
                 } else {

@@ -23,7 +23,7 @@
         <?php include("header.php"); ?>
   </header>
   <section class="banner_row"> <img src="images/banner_1.jpg">
-    <h1> <span>Maritime1stChoice will act as an extended arm of </span> <span> shipping companies in providing solutions suiting </span> Marine IT needs. </h1>
+    <h1> <span>Maritime1stChoice will act as an extended arm of shipping companies in providing solutions suiting Marine IT needs. </h1>
   </section>
   <section class="home_welcome">
     <div class="container">

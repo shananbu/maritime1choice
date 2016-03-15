@@ -52,7 +52,7 @@ if (!empty($_SESSION['login_user'])) {
                             <select id="categoryId">
                                 <option value="-1">--Select--</option>
                                 <?php
-                                $sql = "SELECT id, name FROM category order by name";
+                                $sql = "SELECT id, name FROM Category order by name";
                                 $result = mysqli_query($iCon, $sql);
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     echo '<option value='.$row['id'].'>'.$row['name'].'</option>';

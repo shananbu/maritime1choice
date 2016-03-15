@@ -53,7 +53,7 @@
             <div class="row">
                 <?php } ?>
                 <div class="col-sm-3">
-                    <figure><a href="<?php echo $row['referenceUrl'] ?>"> <span> <img
+                    <figure><a href="//<?php echo $row['referenceUrl'] ?>"> <span> <img
                                     src="admin/<?php echo $row['logoFileName'] ?>"> </span> </a>
                         <figcaption>
                             <h1><?php echo $row['name'] ?></h1>
