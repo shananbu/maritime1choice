@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $error = "Your Login Name or Password is invalid";
     }
- //   $conn->close();
+    //   $conn->close();
 }
 ?>
 
@@ -46,28 +46,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-<header class="navbar-fixed-top top_header ful_row">
-    <div class="logo"> <img src="../images/logo.png"></div>
-    <h1>Maritime1stChoice.com's Admin </h1>
-</header>
-<section id="wrapper">
-    <section class="main_info">
-        <div class="login_box">
-            <form class = "form_li" action="" method="post">
-                <label>UserName :</label><input type="text" name="username" class="box"/><br/><br/>
-                <label>Password :</label><input type="password" name="password" class="box"/><br/><br/>
-                <input type="submit" value=" Submit "/><br/>
-            </form>
+
+<form class="form_li" action="" method="post">
+    <section class="admin_login">
+        <div class="log_admin">
+            <h1>
+                <img src="../images/logo.png">
+            </h1>
+
             <div style="font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+            <ul>
+                <li>
+                    <label>Username</label>
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="username" class="box"/>
+                </li>
+                <li>
+                    <label>password</label>
+                    <i class="fa fa-unlock-alt"></i>
+                    <input type="password" name="password" class="box"/>
+                </li>
+                <li class="de_log_btn">
+
+                    <input type="submit" value=" Submit "/>
+                </li>
+            </ul>
+
         </div>
     </section>
-</section>
-<script>
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
+</form>
 </body>
 </html>
 

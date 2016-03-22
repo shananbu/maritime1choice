@@ -48,15 +48,15 @@
           <div class="cont_list">
             <ul>
               <li> <i class="fa fa-map-marker"></i>
-                <p> Logic Cargo<br>
-                  215, Mallin Street<br>
-                  New York, NY 100 254 </p>
+                <p> 12, Kannadasan Nagar <br>
+                  Main Road, Ramapuram,<br>
+                  Chennai, India-600089  </p>
               </li>
               <li> <i class="fa fa-envelope"></i>
-                <p> <span>info@logiccargo.contact.com</span> <span>support@logiccargo.com</span> </p>
+                <p> <span>nik@maritime1stchoice.com</span> <span>nik@maritime1stchoice.com</span> </p>
               </li>
               <li> <i class="fa fa-phone"></i>
-                <p> <span>+0120 123 4 56 789</span> <span>+0120 987 65419</span> </p>
+                <p> <span> Denmark : +45 31598800</span> <span>India : +91 44 43502168</span> <span> +91 7708924266</span></p>
               </li>
             </ul>
           </div>

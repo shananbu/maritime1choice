@@ -27,22 +27,25 @@
                 <div class="ful_row"> <i class="fa fa-map-marker"></i>
                     <div class="cont_p">
                         <h1>India</h1>
-                        <p> 54, Sample Nagar,
-                            Samaple Street,
-                            Sample City </p>
+                        <p> 12, Kannadasan Nagar Main Road,
+                            Ramapuram,
+                            Chennai.
+                            India-600089 </p>
                     </div>
                 </div>
                 <div class="ful_row">
                     <div class="in_cont"> <i class="fa fa-phone"></i>
                         <div class="cont_p">
                             <h1>Phone</h1>
-                            <p> +91 15482 12548 </p>
+                            <p> Denmark Office: +45 31598800 </p>
+                            <p> India Office: +91 44 43502168 </p>
+                            <p> +91 7708924266 </p>
                         </div>
                     </div>
                     <div class="in_cont re_mar"> <i class="fa fa-envelope"></i>
                         <div class="cont_p">
                             <h1>Mail</h1>
-                            <p> <a href="mailto:contact@companyname.com"> contact@companyname.com </a> </p>
+                            <p> <a href="mailto:nik@maritime1stchoice.com"> nik@maritime1stchoice.com </a> </p>
                         </div>
                     </div>
                 </div>
