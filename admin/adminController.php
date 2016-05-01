@@ -36,7 +36,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         } else if ($action == 'addService') {
             $serviceName = addslashes($_POST['serviceName']);
             $serviceStatus = addslashes($_POST['serviceStatus']);
@@ -67,7 +67,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         } else if ($action == 'addNews') {
             $newTitle = addslashes($_POST['newTitle']);
             $newStatus = addslashes($_POST['newStatus']);
@@ -95,7 +95,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         } else if ($action == 'addCareers') {
             $jobTitle = addslashes($_POST['jobTitle']);
             $location = addslashes($_POST['location']);
@@ -132,7 +132,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         }else if ($action == 'addClient') {
             $clientName = addslashes($_POST['clientName']);
             $referenceUrl = addslashes($_POST['referenceUrl']);
@@ -182,7 +182,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         }
     }
     $conn = null;

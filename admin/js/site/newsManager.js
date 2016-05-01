@@ -94,7 +94,7 @@ $(document).ready(function () {
                 });
             }
         });
-        serviceCall.error(function () {
+        serviceCall.error(function (xhr, ajaxOptions, thrownError) {
             $.alert("Something went wrong while loading news");
         });
     }
