@@ -17,7 +17,6 @@
 <div class="wrapper pt_sub">
     <header class="ful_row top_head">
         <?php include("header.php"); ?>
-        <?php include("indexSubmenu.php"); ?>
     </header>
     <section class="banner_row"><img src="images/banner_1.jpg">
         <h1><span>Maritime1stChoice will act as <br>an extended arm of shipping<br> companies in providing solutions<br> suiting Marine IT needs.

@@ -20,7 +20,7 @@
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <div class="wrapper">
   <header class="ful_row top_head">
-      <?php include("header.php"); ?>
+      <?php include("newsHeader.php"); ?>
   </header>
   <section class="inner_banner in_about">
     <div class="container inn_info">

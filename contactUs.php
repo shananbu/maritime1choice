@@ -23,7 +23,7 @@
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <div class="wrapper">
   <header class="ful_row top_head">
-      <?php include("header.php"); ?>
+      <?php include("newsHeader.php"); ?>
   </header>
   <section class="inner_banner in_contact">
     <div class="container inn_info">
@@ -34,7 +34,7 @@
         <div class="col-sm-6 bread_crumbs">
           <ul>
             <li>Home</li>
-            <li>About us</li>
+            <li>Contact Us</li>
           </ul>
         </div>
       </div>

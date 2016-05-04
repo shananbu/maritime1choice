@@ -1,6 +1,6 @@
 <?php
 $page = 3;
- if (isset($_GET['selected'])) {
+if (isset($_GET['selected'])) {
     $page = addslashes($_GET['selected']);
 }
 ?>
@@ -10,8 +10,8 @@ $page = 3;
         <div class="col-sm-10">
             <nav class="nav_menu top_menu collapse navbar-collapse" id="navbar">
                 <ul>
-                    <li <?php  if($page == 1) {?>class="menu_active" <?php } ?> ><a href="#"> Home </a></li>
-                    <li <?php  if($page == 3) {?>class="menu_active" <?php } ?> ><a href="businessServices.php?selected=3"> Business Services </a></li>
+                    <li <?php  if($page == 1) {?>class="menu_active" <?php } ?> ><a href="index.php"> Home </a></li>
+                    <li <?php  if($page == 3) {?>class="menu_active" <?php } ?> ><a href="#"> Business Services </a></li>
                     <li <?php  if($page == 4) {?>class="menu_active" <?php } ?> ><a href="newsAll.php?selected=4"> News </a></li>
                     <li <?php  if($page == 5) {?>class="menu_active" <?php } ?> ><a href="careers.php?selected=5"> People </a></li>
                     <li <?php  if($page == 6) {?>class="menu_active" <?php } ?> ><a href="ourClients.php?selected=6"> Our Clients </a></li>
@@ -22,16 +22,20 @@ $page = 3;
     </div>
 </div>
 
-
 <!-- submenu pannel start -->
 <div class="submenu index_submenu ful_row single-page-nav">
     <nav class="container">
         <div class="row">
             <ul class="home_submenu col-sm-6 col-sm-offset-6">
-                <li><a href="#about"> About M1C </a></li>
-                <li><a href="#profile"> Profile</a></li>
-                <li><a href="#why_mic"> Why M1C </a></li>
-                <li><a href="#mis_val"> Mission, Vision & Values </a></li>
+
+                <?php
+                $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";
+                $catRowNum = 1;
+                $catResult = mysqli_query($iCon, $catSql);
+                while ($catRow = mysqli_fetch_assoc($catResult)) {
+                    ?>
+                    <li><a href="#service_<?php echo $catRow['id'] ?>"> <?php echo $catRow['name'] ?> </a></li>
+                    <?php $catRowNum ++; } ?>
             </ul>
         </div>
     </nav>

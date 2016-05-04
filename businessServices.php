@@ -10,18 +10,13 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script src="js/jquery-1.12.0.js"></script>
-<!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-      <![endif]-->
 </head>
 
 <body>
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
-<div class="wrapper">
+<div class="wrapper pt_sub">
   <header class="ful_row top_head">
-      <?php include("header.php"); ?>
-      <?php include("businessServicesSubmenu.php"); ?>
+      <?php include("businessServicesHeader.php"); ?>
   </header>
   <section class="inner_banner service_banner">
     <div class="container inn_info">
@@ -62,8 +57,8 @@
               $catResult = mysqli_query($iCon, $catSql);
               while ($catRow = mysqli_fetch_assoc($catResult)) {
               ?>
-              <div id="service_<?php echo $catRow['id']?>" class="<?php if ($catRowNum == 1) { ?>in active tab-pane <?php } else { ?>  tab-pane fade <?php }?>">
-                  <h1><?php echo $catRow['name'] ?></h1>
+              <div class="active tab-pane">
+                  <h1 id="service_<?php echo $catRow['id']?>"><?php echo $catRow['name'] ?></h1>
                   <?php
                   $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id']." order by displayOrder";
                   $result = mysqli_query($iCon, $sql);
@@ -96,19 +91,56 @@
 <script src="js/bootstrap.js"></script> 
 <script>
 // scroll top 
-$(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() != 0) {
-			$('#toTop').fadeIn();	
-		} else {
-			$('#toTop').fadeOut();
-		}
-	});
- 
-	$('#toTop').click(function() {
-		$('body,html').animate({scrollTop:0},800);
-	});	
+/*$(function() {
+ $(window).scroll(function() {
+ if($(this).scrollTop() != 0) {
+ $('#toTop').fadeIn();
+ } else {
+ $('#toTop').fadeOut();
+ }
+ });
+
+ $('#toTop').click(function() {
+ $('body,html').animate({scrollTop:0},800);
+ });
+ });*/
+$(function () {
+    $('#toTop').click(function () {
+        $('body,html').animate({scrollTop: 0}, 800);
+    });
 });
+</script>
+<script src="js/jquery.singlePageNav.js"></script>
+<script>
+    if (!window.console) console = {
+        log: function () {
+        }
+    };
+    $('.single-page-nav').singlePageNav({
+        offset: $('.single-page-nav').outerHeight(),
+        filter: ':not(.external)',
+        updateHash: true,
+        beforeStart: function () {
+            console.log('begin scrolling');
+        },
+        onComplete: function () {
+            console.log('done scrolling');
+        }
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.top_menu li a', function () {
+            $('.top_menu li').removeClass('top_active');
+            $(this).closest('li').addClass('top_active');
+            $('.submenu').slideToggle();
+        });
+        $('.top_menu li').removeClass('top_active');
+        $(this).closest('li').addClass('top_active');
+        $('.submenu').slideToggle();
+    });
 </script>
 </body>
 </html>
