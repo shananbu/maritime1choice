@@ -3,118 +3,160 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maritime1stChoice.com Welcomes you</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/modernizr-2.6.2.min.js"></script>
-<script src="js/jquery-1.12.0.js"></script>
-<!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-      <![endif]-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maritime1stChoice.com Welcomes you</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/jquery-1.12.0.js"></script>
 </head>
 
 <body>
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
-<div class="wrapper">
-  <header class="ful_row top_head">
+<div class="wrapper pt_sub">
+    <header class="ful_row top_head">
         <?php include("header.php"); ?>
-  </header>
-  <section class="banner_row"> <img src="images/banner_1.jpg">
-    <h1> <span>Maritime1stChoice will act as <br>an extended arm of shipping<br> companies in providing solutions<br> suiting Marine IT needs. </h1>
-  </section>
-  <section class="home_welcome">
-    <div class="container">
-      <h1 class="h_1">Who We Are</h1>
-      <p> Maritime1stChoice will act as an extended arm of shipping companies in providing solutions suiting Marine IT needs.
-        Maritime1stChoice is an outsourced strategic partner help shipping companies transforming data into assets by adding value to it. An one stop solution provider for all your Marine IT services. Maritime1stChoice is a result oriented company ensuring Quality work delivered at right time in contributing towards maximizing clients profits. </p>
-    </div>
-  </section>
-  <section class="ful_row">
-    <div class="container">
-      <div class="row">
-        <div class="home_service ad_pa">
-          <h1 class="h_1">Our Services</h1>
+        <?php include("indexSubmenu.php"); ?>
+    </header>
+    <section class="banner_row"><img src="images/banner_1.jpg">
+        <h1><span>Maritime1stChoice will act as <br>an extended arm of shipping<br> companies in providing solutions<br> suiting Marine IT needs.
+        </h1>
+    </section>
 
-            <?php
-            $catSql = "SELECT id, name, description FROM Category where status = 1 and hasToShowInHome = 1 order by displayOrder";
-            $catRowNum = 1;
-            $catResult = mysqli_query($iCon, $catSql);
-            while ($catRow = mysqli_fetch_assoc($catResult)) { ?>
-
-                <article class="col-sm-4"> <img src="images/img_<?php echo $catRowNum; ?>.jpg">
-                    <h2 class="h_2"><?php echo $catRow['name'] ?></h2>
-                    <p> <?php echo $catRow['description'] ?> </p>
-                    <a href="businessServices.php#service_<?php echo $catRow['id'] ?>"  class="link_1"> <i class="fa fa-angle-double-right"></i> Read More</a>
-                </article>
-            <?php $catRowNum ++; } ?>
-        </div>
-        <div class="why_choose ad_pa">
-          <div class="header_2">
-            <h1 class="h_1">Why should you choose us as partner for your business?</h1>
-            <p> We understand respect and implement our stakeholder’s perspective rather than forcing our own.  We understand both emotional and logical rationale that goes into every decision and therefore we work with following 5 values in order to achieve positive result that push us towards our goal. </p>
-          </div>
-          <div class="row why_info">
-            <div class="col-sm-8 cus_accor_1">
-              <div class="panel-group" id="accordion">
-                <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading" data-parent="#accordion" href="#collapseOne"> <span>Empathy </span> <i class="fa fa-plus-square"></i> </a>
-                  <div id="collapseOne" class="panel-collapse collapse in">
-                    <p> Empathy is the driving force behind our business. We create our pathway to success through empathetic engagement with our client, partner and employee. A Successful business does not operate alone; each of us needs support of others to achieve positive result, our team understands that, we therefore involve every member of our team and respect their point of view.  As a business we are good in placing ourselves in client´s shoes and understand their perspective and feeling. </p>
-                  </div>
+    <section class="ful_row">
+        <div class="container">
+            <div class="row">
+                <div class="home_service ad_pa" id="about">
+                    <h1 class="h_3">ABOUT M1C </h1>
+                    <p> The Current outlook of the shipping companies are operating in tighter margins and looking for ways to
+                        scale up their savings. Once overlooked, Marine IT services has started to gain momentum and reaching
+                        the bottom of the Ocean. Rising demand for Marine IT services combined with the aim to aid shipping
+                        companies to focus in their core competency led Martime1stChoice founder to establish the company. <br>
+                        <br>
+                        Maritime1stChoice had a humble beginning in 2014 at Denmark. In line with our desire to provide quality
+                        service at faster pace blended with competitive pricing, Maritime1stChoice branched out to India in 2015
+                        at Tamil Nadu.</p>
                 </div>
-                <div class="panel panel-default"> <a class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><span>Honesty</span> <i class="fa fa-plus-square"></i> </a>
-                  <div id="collapseTwo" class="panel-collapse  collapse">
-                    <p> Empathy would not come without honesty it is the cornerstone in the way we do business – We know without honesty one cannot build long term relationship – services lose its value and sooner or later distrust with the client will arise. We believe in honesty and transparency inside out. We are here to make long term relationship not a short term benefit, we believe in what we do and we do it whole heartedly and honestly. </p>
-                  </div>
+                <div class="home_service ad_pa" id="profile">
+                    <h1 class="h_3">COMPANY PROFILE</h1>
+                    <p> Maritime1stChoice is a strategic partner assisting shipping companies providing end to end
+                        solution for all their Maritime IT service needs. We are result oriented company ensuring
+                        quality, On Time Delivery and maximization of value for client’s investment. Company is driven
+                        and governed by values, Quality Management system, Upgraded Technology, above all skilled
+                        individuals.<br>
+                        <br>
+                        Maritime1stChoice belongs to the Reesen Group, and its headquarters is at Denmark. With a need
+                        and desire to provide Quality service blended with competitive pricing, the CEO – Mr. Leif R.
+                        Brodthagen marched out to Tamil Nadu, India in 2015. Soon Maritime1stChoice IT Consultancy India
+                        LLP was formed with close corporation with Mr. Nithya Kumar, the Country Manager of India and
+                        Mr. Sankaran Krishnan, the HR Consultant. </p>
                 </div>
-                <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapseThree"><span>Uprightness </span> <i class="fa fa-plus-square"></i> </a>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                    <p> Uprightness in all we do – which means that we do not take advantage of our position in the marked or better knowledge / understanding – we take it out in the open discussion and argumentation. We tells what we believe is the best for the customer/client regardless of the influence on the business ability to invoice. </p>
-                  </div>
+                <div class="why_choose ad_pa" id="why_mic">
+                    <h1 class="h_3">WHY M1C </h1>
+                    <h1 class="h_2">Why should you choose us as a partner for your business?</h1>
+                    <p> Our corporate philosophy is built on the premise that our service to our clients and customers
+                        should reflect our Empathy, outmost honesty, uprightness, and transparency in our dealings, we
+                        respect our customers’ needs and carefully plan our work of execution. We follow a business
+                        policy of placing ourselves in clients position to understand better their needs and perspective
+                        so that our services are delivered in time in a most desired way with quality and cost effective
+                        way from the customers point of view. We strive hard to be honest on our dealings with
+                        uprightness and in particular to be transparent. We believe that without transparency and
+                        honesty we cannot built a lasting relationship with customers/clients so essential for achieving
+                        higher orbit of growth.<br>
+                        <br>
+                        Novell VIBE: we use vibe as a shared platform and as a client you are allowed to take full
+                        advantage of it. Once a client is registered with us, they get a unique id and password which
+                        they can use to log in to the shared workspace. Here the clients are able to monitor the status
+                        of the project, besides that the client are able to comment on the project process. Meeting
+                        Agendas and Minutes of the Meeting (MOM) will be shared on the workspace so the client can
+                        easily find out what has been discussed at the latest meeting. Contract and paper-works will
+                        also be uploaded on the vibe workspace so the clients can easily access and refer back to the
+                        clauses of contract if failed to recall.<br>
+                        <br>
+                        Internal Time Registration tool like Time Sheet Reporter (TSR) will be used to supervise the
+                        hours spent on the client’s project checks for possible time waste and opportunities for
+                        streamlining. On clients request a report can be prepared of the hours. We believe that being
+                        transparent in this area will allow the client to understand the cost involved in completing a
+                        particular project. <br>
+                        <br>
+                    </p>
                 </div>
-                <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapsefour"><span>Transparency</span> <i class="fa fa-plus-square"></i> </a>
-                  <div id="collapsefour" class="panel-collapse collapse">
-                    <p> No business is safe business no partner is an honest partner if there is no transparency. We believe in working with close cooperation with our clients and get them involved in decision making process. Through our shared knowledge, and work space (Novell Vibe) our clients are able to collaborate, get an insight on project progress, be a part of collective decision making and maintain continuous dialogue with us. We want our clients to get a “value for their investment” we want to be able to share our book or calculation and time sheet, so they are able to see how we calculate return on their investment, We do business in a righteous manner and therefore we are never afraid to show how we have earned the revenue, we are ready to show our client our operational cost over their investment. </p>
-                  </div>
+                <div class="ad_pa" id="mis_val">
+                    <h1 class="h_3">MISSION, VISION & VALUES</h1>
+                    <p> With a MISSION to secure the value for our clients investment in shipping software by providing
+                        quality data service and IT consulting service characterized by transparency mutual trust in a
+                        cost effective manner. Maritime1stChoice VISION is to be the 1st Choice of customers/clients as
+                        IT service provider in the shipping industry.<br>
+                        <br>
+                        QUALITY – Outmost importance to M1C, as Quality leads to trust and Trust Leads to lasting
+                        business relationship with our client.<br>
+                        <br>
+                        TRANSPARENY & TRUST – Transparency is an assurance and it goes hand in hand with trust. It will
+                        be a part of collective decision making and maintain continuous dialogue with M1C. <br>
+                        <br>
+                        Through customer collaboration cooperation and collective decision making M1C is able to assure
+                        the client “Value for their investment”.<br>
+                    </p>
                 </div>
-                <div class="panel panel-default"> <a data-toggle="collapse" class="panel-heading collapsed" data-parent="#accordion" href="#collapsefive"><span>Promise </span> <i class="fa fa-plus-square"></i> </a>
-                  <div id="collapsefive" class="panel-collapse collapse">
-                    <p> Transparency and honesty would not mean anything if one is not able to deliver what is promised. We know that quality and timely deliveries are of outmost importance. We make sure that our client gets the best value for their investment and together we are able to deliver products and service that reaches customer’s expectation. This is done by listening to client’s requirements, weekly status meetings with the client, thorough and regular quality checks by experts before final delivery. </p>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-sm-4"> <img src="images/img_4.jpg" class="img-responsive"> </div>
-          </div>
         </div>
-        <section class="ad_pa latest_news">
-            <?php include("news.php"); ?>
-        </section>
-      </div>
-    </div>
-  </section>
+    </section>
 </div>
 <footer class="ful_row ad_pa">
     <?php include("footer.php"); ?>
 </footer>
-<script src="js/bootstrap.js"></script> 
+<script src="js/bootstrap.js"></script>
 <script>
-// scroll top 
-$(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() != 0) {
-			$('#toTop').fadeIn();	
-		} else {
-			$('#toTop').fadeOut();
-		}
-	});
- 
-	$('#toTop').click(function() {
-		$('body,html').animate({scrollTop:0},800);
-	});	
-});
+    // scroll top
+    /*$(function() {
+     $(window).scroll(function() {
+     if($(this).scrollTop() != 0) {
+     $('#toTop').fadeIn();
+     } else {
+     $('#toTop').fadeOut();
+     }
+     });
+
+     $('#toTop').click(function() {
+     $('body,html').animate({scrollTop:0},800);
+     });
+     });*/
+
+    $(function () {
+        $('#toTop').click(function () {
+            $('body,html').animate({scrollTop: 0}, 800);
+        });
+    });
+</script>
+<script src="js/jquery.singlePageNav.js"></script>
+<script>
+    if (!window.console) console = {
+        log: function () {
+        }
+    };
+    $('.single-page-nav').singlePageNav({
+        offset: $('.single-page-nav').outerHeight(),
+        filter: ':not(.external)',
+        updateHash: true,
+        beforeStart: function () {
+            console.log('begin scrolling');
+        },
+        onComplete: function () {
+            console.log('done scrolling');
+        }
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $(document).on('click', '.top_menu li a', function () {
+            $('.top_menu li').removeClass('top_active');
+            $(this).closest('li').addClass('top_active');
+            $('.submenu').slideToggle();
+        });
+    });
 </script>
 </body>
 </html>
