@@ -95,7 +95,7 @@
                         be a part of collective decision making and maintain continuous dialogue with M1C. <br>
                         <br>
                         Through customer collaboration cooperation and collective decision making M1C is able to assure
-                        the client “Value for their investment”.<br>
+                        the client <b>“Value for their investment”</b>.<br>
                     </p>
                 </div>
             </div>
@@ -150,11 +150,14 @@
 
 <script>
     $(document).ready(function () {
-        $(document).on('click', '.top_menu li a', function () {
+/*        $(document).on('click', '.top_menu li a', function () {
             $('.top_menu li').removeClass('top_active');
             $(this).closest('li').addClass('top_active');
             $('.submenu').slideToggle();
-        });
+        });*/
+        $('.top_menu li').removeClass('top_active');
+        $('.index').closest('li').addClass('top_active');
+        $('.submenu').slideToggle();
     });
 </script>
 </body>

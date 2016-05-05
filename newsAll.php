@@ -97,7 +97,11 @@ $(function() {
  
 	$('#toTop').click(function() {
 		$('body,html').animate({scrollTop:0},800);
-	});	
+	});
+
+    $('.top_menu li').removeClass('top_active');
+    $('.news').closest('li').addClass('top_active');
+    $('.submenu').slideToggle();
 });
 </script>
 </body>

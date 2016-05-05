@@ -10,12 +10,12 @@ $page = 3;
         <div class="col-sm-10">
             <nav class="nav_menu top_menu collapse navbar-collapse" id="navbar">
                 <ul>
-                    <li <?php  if($page == 1) {?>class="menu_active" <?php } ?> ><a href="#"> Home </a></li>
-                    <li <?php  if($page == 3) {?>class="menu_active" <?php } ?> ><a href="businessServices.php?selected=3"> Business Services </a></li>
-                    <li <?php  if($page == 4) {?>class="menu_active" <?php } ?> ><a href="newsAll.php?selected=4"> News </a></li>
-                    <li <?php  if($page == 5) {?>class="menu_active" <?php } ?> ><a href="careers.php?selected=5"> People </a></li>
-                    <li <?php  if($page == 6) {?>class="menu_active" <?php } ?> ><a href="ourClients.php?selected=6"> Our Clients </a></li>
-                    <li <?php  if($page == 7) {?>class="menu_active" <?php } ?> ><a href="contactUs.php?selected=7"> Contact Us</a></li>
+                    <li class="index"><a href="#"> Home </a></li>
+                    <li class="bService"><a href="businessServices.php"> Business Services </a></li>
+                    <li class="news"><a href="newsAll.php"> News </a></li>
+                    <li class="careers"><a href="careers.php"> People </a></li>
+                    <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
+                    <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
                 </ul>
             </nav>
         </div>

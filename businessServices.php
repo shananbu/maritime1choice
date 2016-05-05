@@ -132,13 +132,13 @@ $(function () {
 
 <script>
     $(document).ready(function () {
-        $(document).on('click', '.top_menu li a', function () {
+/*        $(document).on('click', '.top_menu li a', function () {
             $('.top_menu li').removeClass('top_active');
             $(this).closest('li').addClass('top_active');
             $('.submenu').slideToggle();
-        });
+        });*/
         $('.top_menu li').removeClass('top_active');
-        $(this).closest('li').addClass('top_active');
+        $('.bService').closest('li').addClass('top_active');
         $('.submenu').slideToggle();
     });
 </script>

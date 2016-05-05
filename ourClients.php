@@ -22,7 +22,7 @@
         <div class="container inn_info">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Our Esteemed Clients</h1>
+                    <h1>Our Clients</h1>
                 </div>
                 <div class="col-sm-6 bread_crumbs">
                     <ul>
@@ -121,7 +121,7 @@
         });
 
         $('.top_menu li').removeClass('top_active');
-        $(this).closest('li').addClass('top_active');
+        $('.clients').closest('li').addClass('top_active');
         $('.submenu').slideToggle();
     });
 </script>
