@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include("admin/config.php"); ?>
+
 <!doctype html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -15,8 +17,8 @@
 <body>
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <div class="wrapper pt_sub">
-  <header class="ful_row top_head">
-      <?php include("businessServicesHeader.php"); ?>
+  <header class="ful_row top_head single-page-nav">
+    <?php include("businessServicesHeader.php"); ?>
   </header>
   <section class="inner_banner service_banner">
     <div class="container inn_info">
@@ -33,45 +35,40 @@
       </div>
     </div>
   </section>
-  <section class="inner_wrapper ad_pa bus_ser">
+  <section class="inner_wrapper bus_ser">
     <div class="container">
       <div class="row">
-        <aside class="col-sm-3 aside_right">
-            <h1>business services</h1>
-            <ul>
-                <?php
-                $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";
-                $catRowNum = 1;
-                $catResult = mysqli_query($iCon, $catSql);
-                while ($catRow = mysqli_fetch_assoc($catResult)) {
-                    ?>
-                    <li <?php if ($catRowNum == 1) { ?>class="active"<?php } ?>><a data-toggle="tab" href="businessServices.php#service_<?php echo $catRow['id'] ?>"><?php echo $catRow['name'] ?></a></li>
-                    <?php $catRowNum ++; } ?>
-            </ul>
-        </aside>
-        <section class="col-sm-9">
-          <div class="serv_list tab-content">
-              <?php
-              $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";
-              $catRowNum = 1;
-              $catResult = mysqli_query($iCon, $catSql);
-              while ($catRow = mysqli_fetch_assoc($catResult)) {
-              ?>
-              <div class="active tab-pane">
-                  <h1 id="service_<?php echo $catRow['id']?>"><?php echo $catRow['name'] ?></h1>
-                  <?php
-                  $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id']." order by displayOrder";
-                  $result = mysqli_query($iCon, $sql);
-                  while ($row = mysqli_fetch_assoc($result)) {
-                  ?>
-                  <article>
-                      <h1><?php echo $row['name'] ?></h1>
-                      <?php echo $row['description'] ?>
-                  </article>
-                  <?php } ?>
-              </div>
-              <?php $catRowNum ++; } ?>
+       
+        <section class="col-sm-12">
+          <div class="serv_list tab-content bus_acor">
+            <?php
 
+              $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";
+
+              $catRowNum = 1;
+
+              $catResult = mysqli_query($iCon, $catSql);
+
+              while ($catRow = mysqli_fetch_assoc($catResult)) {
+
+              ?>
+            <div class="active tab-pane te_ju" id="service_<?php echo $catRow['id']?>">
+              <h1><?php echo $catRow['name'] ?></h1>
+              <?php
+
+                  $sql = "SELECT * FROM BusinessService where status = 1 and categoryId=".$catRow['id']." order by displayOrder";
+
+                  $result = mysqli_query($iCon, $sql);
+
+                  while ($row = mysqli_fetch_assoc($result)) {
+
+                  ?>
+              <article>
+                <h1><?php echo $row['name'] ?></h1>
+                <?php echo $row['description'] ?> </article>
+              <?php } ?>
+            </div>
+            <?php $catRowNum ++; } ?>
           </div>
         </section>
       </div>
@@ -80,67 +77,16 @@
   <section class="ful_row">
     <div class="container">
       <section class="ad_pa latest_news">
-          <?php include("news.php"); ?>
+        <?php include("news.php"); ?>
       </section>
     </div>
   </section>
-  <footer class="ful_row ad_pa">
-      <?php include("footer.php"); ?>
-  </footer>
-</div>
-<script src="js/bootstrap.js"></script> 
-<script>
-// scroll top 
-/*$(function() {
- $(window).scroll(function() {
- if($(this).scrollTop() != 0) {
- $('#toTop').fadeIn();
- } else {
- $('#toTop').fadeOut();
- }
- });
-
- $('#toTop').click(function() {
- $('body,html').animate({scrollTop:0},800);
- });
- });*/
-$(function () {
-    $('#toTop').click(function () {
-        $('body,html').animate({scrollTop: 0}, 800);
-    });
-});
+  <script>
+  $(document).ready(function () {
+    $('.top_menu li').removeClass('top_active');
+	$('.top_menu li.bService').addClass('top_active');
+  });
 </script>
-<script src="js/jquery.singlePageNav.js"></script>
-<script>
-    if (!window.console) console = {
-        log: function () {
-        }
-    };
-    $('.single-page-nav').singlePageNav({
-        offset: $('.single-page-nav').outerHeight(),
-        filter: ':not(.external)',
-        updateHash: true,
-        beforeStart: function () {
-            console.log('begin scrolling');
-        },
-        onComplete: function () {
-            console.log('done scrolling');
-        }
-    });
-</script>
+  <?php include("footer.php"); ?>
 
 
-<script>
-    $(document).ready(function () {
-/*        $(document).on('click', '.top_menu li a', function () {
-            $('.top_menu li').removeClass('top_active');
-            $(this).closest('li').addClass('top_active');
-            $('.submenu').slideToggle();
-        });*/
-        $('.top_menu li').removeClass('top_active');
-        $('.bService').closest('li').addClass('top_active');
-        $('.submenu').slideToggle();
-    });
-</script>
-</body>
-</html>

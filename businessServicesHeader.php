@@ -23,10 +23,10 @@ if (isset($_GET['selected'])) {
 </div>
 
 <!-- submenu pannel start -->
-<div class="submenu index_submenu ful_row single-page-nav">
+<div class="submenu index_submenu ful_row">
     <nav class="container">
         <div class="row">
-            <ul class="home_submenu col-sm-6 col-sm-offset-6">
+            <ul class="home_submenu">
 
                 <?php
                 $catSql = "SELECT id, name FROM Category where status = 1 order by displayOrder";

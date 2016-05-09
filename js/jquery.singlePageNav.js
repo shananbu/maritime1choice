@@ -26,7 +26,7 @@ if (typeof Object.create !== 'function') {
             
             this.container = container;            
             this.$container = $(container);
-            this.$links = this.$container.find('a');
+            this.$links = this.$container.find('.submenu a');
 
             if (this.options.filter !== '') {
                 this.$links = this.$links.filter(this.options.filter);

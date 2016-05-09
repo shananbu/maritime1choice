@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php include("admin/config.php"); ?>
+
 <!doctype html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -10,17 +12,22 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 <script src="js/modernizr-2.6.2.min.js"></script>
 <script src="js/jquery-1.12.0.js"></script>
+
 <!--[if lt IE 9]>
+
       <script src="js/html5shiv.min.js"></script>
+
       <script src="js/respond.min.js"></script>
+
       <![endif]-->
+
 </head>
 
 <body>
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
 <div class="wrapper">
-  <header class="ful_row top_head">
-      <?php include("header.php"); ?>
+  <header class="ful_row top_head single-page-nav">
+    <?php include("header.php"); ?>
   </header>
   <section class="inner_banner in_about">
     <div class="container inn_info">
@@ -49,36 +56,14 @@
             In line with our desire to provide quality service at faster pace blended with competitive pricing, Maritime1stChoice branched out to India in 2015 at Tamil Nadu. Companies’ vision is to serve the shipping companies IT service needs at a faster pace and remain as a one stop shop solution provider. Company is driven and governed by values, Quality Management system, Upgraded Technology, above all skilled and inquisitive individuals. </p>
         </div>
         <div class="col-sm-3 aside_right">
-            <?php include("ourServices.php"); ?>
+          <?php include("ourServices.php"); ?>
         </div>
       </div>
     </div>
   </section>
   <section class="ful_row">
     <div class="container">
-        <?php include("news.php"); ?>
+      <?php include("news.php"); ?>
     </div>
   </section>
-  <footer class="ful_row ad_pa">
-      <?php include("footer.php"); ?>
-  </footer>
-</div>
-<script src="js/bootstrap.js"></script> 
-<script>
-// scroll top 
-$(function() {
-	$(window).scroll(function() {
-		if($(this).scrollTop() != 0) {
-			$('#toTop').fadeIn();	
-		} else {
-			$('#toTop').fadeOut();
-		}
-	});
- 
-	$('#toTop').click(function() {
-		$('body,html').animate({scrollTop:0},800);
-	});	
-});
-</script>
-</body>
-</html>
+  <?php include("footer.php"); ?>
