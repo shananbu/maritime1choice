@@ -90,3 +90,27 @@ create table Client (
 	updatedDate datetime,
 	constraint pk6 primary key(id)
 );
+
+-- drop table Testimonial;
+create table Testimonial (
+	id bigint auto_increment,
+	clientId bigint,
+	testimonialBy varchar(300),
+	description varchar(10000),
+	status bit,
+	createdDate datetime,
+	updatedDate datetime,
+	constraint pk7 primary key(id),
+  constraint fk2 foreign key (clientId) references Client(id)
+);
+
+-- drop table EventGallery;
+create table EventGallery (
+	id bigint auto_increment,
+	name varchar(100),
+	imageFileName varchar(100),
+	status bit,
+	createdDate datetime,
+	updatedDate datetime,
+	constraint pk8 primary key(id)
+);

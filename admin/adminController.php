@@ -183,6 +183,38 @@ if (!empty($_SESSION['login_user'])) {
                 $rows[] = $r;
             }
             echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
+        } else if ($action == 'getAllTestimonial') {
+            $sql = "SELECT t.id, c.name, t.testimonialBy, t.description, t.status, c.id cid  FROM Testimonial t, Client c where t.id = c.id  order by t. createdDate desc";
+            $result = mysqli_query($iCon, $sql);
+            $rows = array();
+            while ($r = mysqli_fetch_assoc($result)) {
+                $rows[] = $r;
+            }
+            echo json_encode($rows);
+        } else if ($action == 'addTestimonial') {
+            $clientId = addslashes($_POST['clientId']);
+            $feedbackBy = addslashes($_POST['feedbackBy']);
+            $feedbackStatus = addslashes($_POST['feedbackStatus']);
+            $feedback = addslashes($_POST['feedback']);
+
+            $feedbackId = addslashes($_POST['feedbackId']);
+
+            if (!empty($feedbackId)) {
+                $sql = "UPDATE Testimonial SET clientId = $clientId , testimonialBy = '$feedbackBy', description = '$feedback', status = $feedbackStatus, updatedDate =  now() WHERE ID ='$feedbackId' ";
+                if ($conn->query($sql) == TRUE) {
+                    echo "Testimonial updated successfully.";
+                } else {
+                    echo "Error while updating Testimonial.";
+                }
+            } else {
+                $sql = "INSERT INTO Testimonial (clientId, testimonialBy, description, status, createdDate)
+                        VALUES ($clientId, '$feedbackBy', '$feedback' ,$feedbackStatus, now())";
+                if ($conn->query($sql) == TRUE) {
+                    echo "Testimonial created successfully.";
+                } else {
+                    echo "Error while adding Testimonial.";
+                }
+            }
         }
     }
     $conn = null;
@@ -191,3 +223,4 @@ if (!empty($_SESSION['login_user'])) {
     echo "Session Expired!";
 }
 ?>
+
