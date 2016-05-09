@@ -1,6 +1,6 @@
 <?php
 $to = "shananbu@gmail.com";
-$subject = "Enquiry from ".addslashes($_POST['personName'])." about '".addslashes($_POST['contactSubject'])."'";
+$subject = "Enquiry from ".addslashes($_POST['personName']);
 
 $message = "Hi,<br>";
 $message .= addslashes($_POST['comments']);

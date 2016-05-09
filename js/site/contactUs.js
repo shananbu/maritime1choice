@@ -11,7 +11,7 @@ $(document).ready(function () {
             formData.append('phoneNumber', $('#phoneNumber').val());
             formData.append('personName', $('#personName').val());
             formData.append('personEmail', $('#personEmail').val());
-            formData.append('contactSubject', $('#contactSubject').val());
+         //   formData.append('contactSubject', $('#contactSubject').val());
 
             formData.append('comments', $('#comments').val());
 

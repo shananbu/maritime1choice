@@ -54,15 +54,25 @@
           <div class="cont_list">
             <ul>
               <li> <i class="fa fa-map-marker"></i>
-                <p> 12, Kannadasan Nagar <br>
-                  Main Road, Ramapuram,<br>
-                  Chennai, India-600089 </p>
+                <p> <b>M1C - INDIA</b><br>
+                  Maritime First Choice IT Consultancy India LLP<br>
+                  No.4, 3rd Floor, Priyan Plaza,<br>
+                  No.76, Nelson Manickam Road,<br>
+                  Aminjikarai, Chennai – 600 029,<br>
+                  Tamilnadu,<br>
+                  India.<br>
+                  Telephone: +91 44 43502168<br></p>
+              </li>
+              <li> <i class="fa fa-map-marker"></i>
+
+                <p><b>M1C – DENMARK</b><br>Maritime1stChoice ApS<br>
+                  Leestrupvej 31,<br>
+                  4683 Rønnede,<br>
+                  Denmark,<br>
+                  Telephone: +45 31598800<br></p>
               </li>
               <li> <i class="fa fa-envelope"></i>
-                <p> <span>nik@maritime1stchoice.com</span> <span>nik@maritime1stchoice.com</span> </p>
-              </li>
-              <li> <i class="fa fa-phone"></i>
-                <p> <span> Denmark : +45 31598800</span> <span>India : +91 44 43502168</span> <span> +91 7708924266</span></p>
+                <p> <span>sales@maritime1stchoice.com</span> <span>info@maritime1stchoice.com</span> </p>
               </li>
             </ul>
           </div>
@@ -74,14 +84,14 @@
               <input type="text" placeholder="Name" id="personName">
             </div>
             <div class="col-sm-6">
-              <input type="text" placeholder="Phone Number" id="phoneNumber">
-            </div>
-            <div class="col-sm-6">
               <input type="email" placeholder="Email" id="personEmail">
             </div>
-            <div class="col-sm-6">
-              <input type="text" placeholder="subject" id="contactSubject">
+            <div class="col-sm-12">
+              <input type="text" placeholder="Phone Number" id="phoneNumber">
             </div>
+<!--            <div class="col-sm-6">
+              <input type="text" placeholder="subject" id="contactSubject">
+            </div>-->
             <div class="col-sm-12">
               <textarea placeholder="Comments" id="comments"></textarea>
             </div>

@@ -26,27 +26,33 @@
         <div class="foot_col_4 foot_contact foot_nav">
           <h2>Reach us</h2>
           <div class="ful_row"> <i class="fa fa-map-marker"></i>
-            <div class="cont_p">
-              <h1>India</h1>
-              <p> 12, Kannadasan Nagar Main Road,
-                Ramapuram,
-                Chennai.
-                India-600089 </p>
+                <div class="cont_p">
+                    <h1>M1C – INDIA</h1>
+                    <p>
+                        Maritime First Choice IT Consultancy India LLP<br>
+                        No.4, 3rd Floor, Priyan Plaza,<br>
+                        No.76, Nelson Manickam Road,<br>
+                        Aminjikarai, Chennai – 600 029,<br>
+                        Tamilnadu,<br>
+                        India.<br>
+                        Telephone: +91 44 43502168<br></p>
+                </div>
             </div>
-          </div>
-          <div class="ful_row">
-            <div class="in_cont"> <i class="fa fa-phone"></i>
-              <div class="cont_p">
-                <h1>Phone</h1>
-                <p> Denmark Office: +45 31598800 </p>
-                <p> India Office: +91 44 43502168 </p>
-                <p> +91 7708924266 </p>
-              </div>
+            <div class="ful_row"> <i class="fa fa-map-marker"></i>
+                <div class="cont_p">
+                    <h1>M1C – DENMARK</h1>
+                    <p>Maritime1stChoice ApS<br>
+                        Leestrupvej 31,<br>
+                        4683 Rønnede,<br>
+                        Denmark.<br>
+                        Telephone: +45 31598800<br></p>
+                </div>
             </div>
             <div class="in_cont re_mar"> <i class="fa fa-envelope"></i>
               <div class="cont_p">
                 <h1>Mail</h1>
-                <p> <a href="mailto:nik@maritime1stchoice.com"> nik@maritime1stchoice.com </a> </p>
+                <p> <a href="sales@maritime1stchoice.com"> sales@maritime1stchoice.com </a> </p>
+                  <p> <a href="mailto:info@maritime1stchoice.com"> info@maritime1stchoice.com </a> </p>
               </div>
             </div>
           </div>
