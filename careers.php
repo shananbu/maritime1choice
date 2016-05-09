@@ -82,7 +82,17 @@
 
                     recognised, trained and treated as an individual. You will be working within a supportive
 
-                    environment, where we all like to treat each other like equals. </p>
+                    environment, where we all like to treat each other like equals. <br><br>
+					
+					
+					Would you like  to be a part of M1C family click here to view latest Vacancies--- (when this page opens, if there are no vacancies, we should have a line saying- we are always looking for new talents and recruits , please send your CV along with a cover letter, to    <a href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>)
+					
+					
+					</p>
+					
+					
+					
+					
                 <section class="cus_accor_1">
                     <article>
                         <div class="panel-group" id="accordion">

@@ -97,7 +97,7 @@
             
             higher orbit of growth.<br>
             <br>
-            Novell VIBE: we use vibe as a shared platform and as a client you are allowed to take full
+            <b>Novell VIBE:</b> we use vibe as a shared platform and as a client you are allowed to take full
             
             advantage of it. Once a client is registered with us, they get a unique id and password which
             
@@ -127,25 +127,8 @@
         </div>
         <div class="ad_pa" id="mis_val">
           <h1 class="h_1">MISSION, VISION & VALUES</h1>
-          <p> With a MISSION to secure the value for our clients investment in shipping software by providing
-            
-            quality data service and IT consulting service characterized by transparency mutual trust in a
-            
-            cost effective manner. Maritime1stChoice VISION is to be the 1st Choice of customers/clients as
-            
-            IT service provider in the shipping industry.<br>
-            <br>
-            QUALITY – Outmost importance to M1C, as Quality leads to trust and Trust Leads to lasting
-            
-            business relationship with our client.<br>
-            <br>
-            TRANSPARENY & TRUST – Transparency is an assurance and it goes hand in hand with trust. It will
-            
-            be a part of collective decision making and maintain continuous dialogue with M1C. <br>
-            <br>
-            Through customer collaboration cooperation and collective decision making M1C is able to assure
-            
-            the client <b>“Value for their investment”</b>.<br>
+          <p>With a MISSION to secure the value for  our clients investment in shipping software by providing quality data service and IT consulting service characterized by transparency mutual trust in a cost effective manner. Maritime1stChoice VISION is to be the <b>1st Choice IT service provider within the shipping industry.</b>
+            <br>            <br>						<h1 class="h_2">			Fundamental Principles			</h1>									QUALITY – Quality is of Utmost importance to M1C, as Quality leads to trust and Trust Leads to lasting business relationship with our client. <br><br>									TRANSPARENY & TRUST – Transparency is an assurance and it goes hand in hand with trust. It will be a part of collective decision making and maintain continuous dialogue with M1C. <br><br>									Through customer collaboration cooperation and collective decision making M1C is able to assure the client <b>“Value for their investment”.</b> 
           </p>
         </div>
       </div>

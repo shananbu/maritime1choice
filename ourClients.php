@@ -52,11 +52,11 @@
     if ($clientNumber % $clientsPerRow == 0) {
 
     ?>
-<section class="inner_wrapper client_page ad_pa" id="ourClients">
+<section class="inner_wrapper client_page" id="ourClients">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <h1 class="h_3">Our Esteemed Clients</h1>
+        <h1 class="h_3 ad_pa">Our Esteemed Clients</h1>
       </div>
       <?php } ?>
       <div class="col-sm-3">
@@ -89,15 +89,28 @@
 
 <section  id="testimonials">
   <div class="container test_monial">
-    <h1 class="h_3">Testimonials </h1>
+    <h1 class="h_3 ad_pa">Testimonials </h1>
+	
+	<p>
+	We are proud to announce that we have some of the top clients within the shipping industry 
+Name the clients with their logo and a few words on them-
+	</p>
       <article>
         
-        <p>See what our Clients says about M1C
-          
-          “Maritime1stChoice has consistently delivered good results for projects run by ShipNet Asia. Projects are executed professionally and in a cooperative / consultative manner.
-          
-          Keep up the good work.” </p>
-        <span> - Alfred Verzijl, Regional Manager, ShipNet Asia Pte Ltd </span> </article>
+        <p>The Maersk Group is a worldwide conglomerate that operates in some 130 countries with a workforce of over 89,000 employees. Owning the world’s largest container shipping company, Maersk is involved in a wide range of activities in the shipping, logistics, and the oil and gas industries.  </p>
+        <span> - The Maersk Group </span> </article>
+		
+		
+		<article>
+        
+        <p>ShipNet delivers solutions that help shipping companies operate more efficiently and profitably. ShipNet’s success in this is founded on the fusion of comprehensive shipping industry understanding and world class ERP software that together allows organizations to streamline their processes and manage their information and assets in ways that help them make the right decisions for their business.</p>
+        <span> - ShipNet Asia  </span> </article>
+		
+		
+			<article>
+        
+        <p>“Maritime1stChoice has consistently delivered good results for projects run by ShipNet Asia. Projects are executed professionally and in a cooperative / consultative manner. Keep up the good work!! ” </p>
+        <span> - Alfred Verzijl, Regional Manager APAC  </span> </article>
    
   </div>
 </section>

@@ -49,7 +49,7 @@
   <section class="inner_wrapper ad_pa">
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-5">
           <h1 class="h_3">Get in touch</h1>
           <div class="cont_list">
             <ul>
@@ -77,7 +77,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-8 cont_form">
+        <div class="col-sm-7 cont_form">
           <h1 class="h_3">Contact form</h1>
           <div class="row">
             <div class="col-sm-6">
