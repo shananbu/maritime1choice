@@ -1062,6 +1062,9 @@ body {
 .te_ali_cen {
 	text-align: center;
 }
+.te_ali_justify {
+	text-align: justify;
+}
 .careers_list .h_1:after {
 	margin-bottom: 10px;
 }

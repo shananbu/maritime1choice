@@ -35,8 +35,7 @@ if (isset($_GET['selected'])) {
     <div class="row">
       <ul class="home_submenu">
         <li><a href="#peopleAtM1c"> People at M1C </a></li>
-        <li><a href="#m1cCulture"> M1C Culture &amp; Values</a></li>
-        <li><a href="#joinM1c"> Join M1C – Careers </a></li>
+        <li><a href="#joinM1c"> Career - Join M1C </a></li>
       </ul>
     </div>
   </nav>

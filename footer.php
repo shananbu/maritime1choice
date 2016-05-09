@@ -51,7 +51,7 @@
             <div class="in_cont re_mar"> <i class="fa fa-envelope"></i>
               <div class="cont_p">
                 <h1>Mail</h1>
-                <p> <a href="sales@maritime1stchoice.com"> sales@maritime1stchoice.com </a> </p>
+                <p> <a href="mailto:sales@maritime1stchoice.com"> sales@maritime1stchoice.com </a> </p>
                   <p> <a href="mailto:info@maritime1stchoice.com"> info@maritime1stchoice.com </a> </p>
               </div>
             </div>
@@ -110,4 +110,3 @@ $('.single-page-nav').singlePageNav({
  
 
  
-</body></html>
