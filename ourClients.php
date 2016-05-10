@@ -35,52 +35,26 @@
     </div>
   </div>
 </section>
-<?php
 
-    $clientsPerRow = 4;
-
-    $sql = "SELECT * FROM Client where status = 1 order by name ";
-
-    $result = mysqli_query($iCon, $sql);
-
-    $rowCount  = mysqli_num_rows($result);
-
-    $clientNumber = 0;
-
-    while ($row = mysqli_fetch_assoc($result)) {
-
-    if ($clientNumber % $clientsPerRow == 0) {
-
-    ?>
 <section class="inner_wrapper client_page" id="ourClients">
   <div class="container">
     <div class="row">
+	
       <div class="col-sm-12">
-        <h1 class="h_3 ad_pa">Our Esteemed Clients</h1>
+        <h1 class="h_3 ad_pa">Our Clients</h1>
+		
+		<p class="pt_10">
+		We believe in close cooperation with our clients and getting them involved in decision-making process.  Through our shared knowledge, and work platform (Novell Vibe) our clients are able to collaborate, get an insight on project progress, be a part of the collective decision-making and maintain a continuous dialogue with us. We want our clients to get a “value for their investment”; we want to be able to share our book or calculation and time sheet so that they are able to see how we calculate return on their investment. We do business in a righteous manner and therefore we are never afraid to show how we have earned the revenue, we are ready to show our client our operational cost over their investments.
+		
+		<br>
+		<br>
+		For Current clients, please click here to view your shared workspace-<br>
+		<a href="https://vibe.reesenconsulting.com" class="lin_hr" target="_blank">
+		https://vibe.reesenconsulting.com
+		</a>
+		</p>
       </div>
-      <?php } ?>
-      <div class="col-sm-3">
-        <figure><a href="//<?php echo $row['referenceUrl'] ?>"> <span> <img
 
-                                    src="admin/<?php echo $row['logoFileName'] ?>"> </span> </a>
-          <figcaption>
-            <h1><?php echo $row['name'] ?></h1>
-            <p><?php echo $row['description'] ?></p>
-          </figcaption>
-        </figure>
-      </div>
-      <?php
-
-                if ( $rowCount == 1 || $clientNumber == ($clientsPerRow - 1)) {
-
-                ?>
-    </div>
-    <div class="row">
-      <?php }
-
-    $clientNumber = $clientNumber + 1;
-
-    } ?>
     </div>
   </div>
 </section>
@@ -91,27 +65,59 @@
   <div class="container test_monial">
     <h1 class="h_3 ad_pa">Testimonials </h1>
 	
-	<p>
-	We are proud to announce that we have some of the top clients within the shipping industry 
+	<p class="pt_10">
+		We are proud to announce that we have some of the top clients within the shipping industry 
 Name the clients with their logo and a few words on them-
-	</p>
-      <article>
-        
-        <p>The Maersk Group is a worldwide conglomerate that operates in some 130 countries with a workforce of over 89,000 employees. Owning the world’s largest container shipping company, Maersk is involved in a wide range of activities in the shipping, logistics, and the oil and gas industries.  </p>
-        <span> - The Maersk Group </span> </article>
-		
-		
-		<article>
-        
-        <p>ShipNet delivers solutions that help shipping companies operate more efficiently and profitably. ShipNet’s success in this is founded on the fusion of comprehensive shipping industry understanding and world class ERP software that together allows organizations to streamline their processes and manage their information and assets in ways that help them make the right decisions for their business.</p>
-        <span> - ShipNet Asia  </span> </article>
-		
-		
-			<article>
-        
-        <p>“Maritime1stChoice has consistently delivered good results for projects run by ShipNet Asia. Projects are executed professionally and in a cooperative / consultative manner. Keep up the good work!! ” </p>
-        <span> - Alfred Verzijl, Regional Manager APAC  </span> </article>
-   
+		</p>
+
+      <?php
+
+      $sql = "SELECT * FROM Client where status = 1 order by name ";
+
+      $result = mysqli_query($iCon, $sql);
+
+      while ($row = mysqli_fetch_assoc($result)) {
+
+      ?>
+<div class="row test_cli">
+<div class="row">
+<div class="col-sm-9">
+<article>
+        <h1><?php echo $row['name'] ?></h1>
+    <p><?php echo $row['description'] ?></p>
+      </article>
+</div>
+<div class="col-sm-3 client_page">
+    <figure><a href="//<?php echo $row['referenceUrl'] ?>"> <span> <img
+
+                    src="admin/<?php echo $row['logoFileName'] ?>"> </span> </a>
+        <figcaption>
+            <h1><?php echo $row['name'] ?></h1>
+        </figcaption>
+    </figure>
+</div>
+    <?php
+
+    $tsql = "SELECT * FROM Testimonial where status = 1 and clientId = ".$row['id']." order by createdDate ";
+
+    $tresult = mysqli_query($iCon, $tsql);
+
+    while ($trow = mysqli_fetch_assoc($tresult)) {
+
+        ?>
+<div class="col-sm-10 tes_block col-sm-offset-2"> 
+<article>
+ <p>The Maersk Group is a worldwide conglomerate that operates in some 130 countries with a workforce of over 89,000 employees. Owning the world’s largest container shipping company, Maersk is involved in a wide range of activities in the shipping, logistics, and the oil and gas industries.  </p>
+        <span> - <?php echo $trow['testimonialBy'] ?></span>
+          </figure>
+</article>
+</div>
+    <?php }} ?>
+
+</div>
+</div>
+	
+    
   </div>
 </section>
 <script>

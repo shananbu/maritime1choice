@@ -1249,7 +1249,9 @@ body {
 	text-align: center;
 	width: 100%;
 	margin: 0 auto;
-	border-bottom: 0px;
+}
+.client_page figure a:hover{
+border:#D16440 1px solid
 }
 .client_page figure span img {
 	display: block;
@@ -1268,7 +1270,7 @@ body {
 	-o-transition: all 0.4s linear;
 	-webkit-transition: all 0.4s linear;
 }
-.client_page figure h1 {
+.client_page figure h1, .test_cli article h1 {
 	display: block;
 	font-weight: 600;
 	font-size: 20px;
@@ -1378,4 +1380,32 @@ background: rgb(255, 255, 255) none repeat scroll 0 0;
 {
 	font-weight:600;
 }
+
+.pt_15{
+	padding-top:10px;
+}
+
+.lin_hr{
+	color:#000060;
+	text-decoration:underline;
+	display:block;
+	padding-top:5px;
+	
+}
+.test_cli{
+	margin-top:20px;
+}
+
+.test_cli  > .ful_row{
+	margin-bottom:15px;
+	display:block;
+	
+}
+
+.tes_block{
+	margin-top:10px;
+}
+
+.bold-font {
+	font-weight: 600;
 }

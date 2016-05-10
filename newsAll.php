@@ -33,7 +33,7 @@
   <div class="container inn_info">
     <div class="row">
       <div class="col-sm-6">
-        <h1>Latest News</h1>
+        <h1>Latest news of our Company</h1>
       </div>
       <div class="col-sm-6 bread_crumbs">
         <ul>

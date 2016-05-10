@@ -190,7 +190,7 @@ if (!empty($_SESSION['login_user'])) {
             while ($r = mysqli_fetch_assoc($result)) {
                 $rows[] = $r;
             }
-            echo json_encode($rows);
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         } else if ($action == 'addTestimonial') {
             $clientId = addslashes($_POST['clientId']);
             $feedbackBy = addslashes($_POST['feedbackBy']);
@@ -200,7 +200,6 @@ if (!empty($_SESSION['login_user'])) {
 
             if (!empty($feedbackId)) {
                 $sql = "UPDATE Testimonial SET clientId = '$clientId' , testimonialBy = '$feedbackBy', description = '$feedback', status = $feedbackStatus, updatedDate =  now() WHERE ID ='$feedbackId' ";
-                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "Testimonial updated successfully.";
                 } else {

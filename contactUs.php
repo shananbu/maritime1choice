@@ -54,7 +54,7 @@
           <div class="cont_list">
             <ul>
               <li> <i class="fa fa-map-marker"></i>
-                <p> <b>M1C - INDIA</b><br>
+                <p> <b class="bold-font">M1C - INDIA</b><br>
                   Maritime First Choice IT Consultancy India LLP<br>
                   No.4, 3rd Floor, Priyan Plaza,<br>
                   No.76, Nelson Manickam Road,<br>
@@ -65,7 +65,7 @@
               </li>
               <li> <i class="fa fa-map-marker"></i>
 
-                <p><b>M1C – DENMARK</b><br>Maritime1stChoice ApS<br>
+                <p><b class="bold-font">M1C – DENMARK</b><br>Maritime1stChoice ApS<br>
                   Leestrupvej 31,<br>
                   4683 Rønnede,<br>
                   Denmark,<br>
