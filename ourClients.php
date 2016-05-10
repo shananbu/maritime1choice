@@ -107,7 +107,7 @@ Name the clients with their logo and a few words on them-
         ?>
 <div class="col-sm-10 tes_block col-sm-offset-2"> 
 <article>
- <p>The Maersk Group is a worldwide conglomerate that operates in some 130 countries with a workforce of over 89,000 employees. Owning the world’s largest container shipping company, Maersk is involved in a wide range of activities in the shipping, logistics, and the oil and gas industries.  </p>
+ <p><?php echo $trow['description'] ?> </p>
         <span> - <?php echo $trow['testimonialBy'] ?></span>
           </figure>
 </article>
