@@ -80,7 +80,7 @@ $(document).ready(function () {
     });
 
     function reset() {
-        $('#clientId').val("");
+        $('#clientId').val(-1);
         $('#feedbackBy').val("");
         $('#feedbackStatus').val("");
         $('#feedbackText').val("");

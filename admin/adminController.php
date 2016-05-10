@@ -196,11 +196,11 @@ if (!empty($_SESSION['login_user'])) {
             $feedbackBy = addslashes($_POST['feedbackBy']);
             $feedbackStatus = addslashes($_POST['feedbackStatus']);
             $feedback = addslashes($_POST['feedback']);
-
             $feedbackId = addslashes($_POST['feedbackId']);
 
             if (!empty($feedbackId)) {
-                $sql = "UPDATE Testimonial SET clientId = $clientId , testimonialBy = '$feedbackBy', description = '$feedback', status = $feedbackStatus, updatedDate =  now() WHERE ID ='$feedbackId' ";
+                $sql = "UPDATE Testimonial SET clientId = '$clientId' , testimonialBy = '$feedbackBy', description = '$feedback', status = $feedbackStatus, updatedDate =  now() WHERE ID ='$feedbackId' ";
+                echo $sql;
                 if ($conn->query($sql) == TRUE) {
                     echo "Testimonial updated successfully.";
                 } else {
