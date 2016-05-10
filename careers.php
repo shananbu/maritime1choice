@@ -85,7 +85,7 @@
                     environment, where we all like to treat each other like equals. <br><br>
 					
 					
-					Would you like  to be a part of M1C family click here to view latest Vacancies--- (when this page opens, if there are no vacancies, we should have a line saying- we are always looking for new talents and recruits , please send your CV along with a cover letter, to    <a href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>)
+					Would you like  to be a part of M1C family click here to view latest Vacancies. We are always looking for new talents and recruits , please send your CV along with a cover letter, to    <a href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>)
 					
 					
 					</p>
