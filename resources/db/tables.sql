@@ -22,7 +22,7 @@ insert into AdminLogin (firstName, designation, userName, password, createdDate)
 -- drop table Category;
 create table Category (
 	id bigint auto_increment,
-	name varchar(25),
+	name varchar(100),
 	description varchar(5000),
 	displayOrder bigint,
 	hasToShowInHome bit,
