@@ -133,7 +133,7 @@ if (!empty($_SESSION['login_user'])) {
                 $rows[] = $r;
             }
             echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
-        }else if ($action == 'addClient') {
+        } else if ($action == 'addClient') {
             $clientName = addslashes($_POST['clientName']);
             $referenceUrl = addslashes($_POST['referenceUrl']);
             $clientStatus = addslashes($_POST['clientStatus']);
@@ -143,10 +143,10 @@ if (!empty($_SESSION['login_user'])) {
 
             if (!empty($clientId)) {
                 $logoFileName = "";
-                if(isset($_FILES['clientLogo'])){
+                if (isset($_FILES['clientLogo'])) {
                     $file_name = $_FILES['clientLogo']['name'];
-                    $file_tmp =$_FILES['clientLogo']['tmp_name'];
-                    $logoFileName = "cImages/".rand()."_".$file_name;
+                    $file_tmp = $_FILES['clientLogo']['tmp_name'];
+                    $logoFileName = "cImages/" . rand() . "_" . $file_name;
                     move_uploaded_file($file_tmp, $logoFileName);
                     $sql = "UPDATE Client SET  logoFileName='$logoFileName', updatedDate =  now() WHERE ID ='$clientId' ";
                     $conn->query($sql);
@@ -160,10 +160,10 @@ if (!empty($_SESSION['login_user'])) {
                 }
             } else {
                 $logoFileName = "";
-                if(isset($_FILES['clientLogo'])){
+                if (isset($_FILES['clientLogo'])) {
                     $file_name = $_FILES['clientLogo']['name'];
-                    $file_tmp =$_FILES['clientLogo']['tmp_name'];
-                    $logoFileName = "cImages/".rand()."_".$file_name;
+                    $file_tmp = $_FILES['clientLogo']['tmp_name'];
+                    $logoFileName = "cImages/" . rand() . "_" . $file_name;
                     move_uploaded_file($file_tmp, $logoFileName);
                 }
                 $sql = "INSERT INTO Client (name, referenceUrl, description, status, logoFileName, createdDate)
@@ -214,6 +214,54 @@ if (!empty($_SESSION['login_user'])) {
                     echo "Error while adding Testimonial.";
                 }
             }
+        } else if ($action == 'addEventImage') {
+            $eventName = addslashes($_POST['eventName']);
+            $eventStatus = addslashes($_POST['eventStatus']);
+
+            $eventId = addslashes($_POST['eventId']);
+
+            if (!empty($eventId)) {
+                $eventFileName = "";
+                if (isset($_FILES['eventImage'])) {
+                    $file_name = $_FILES['eventImage']['name'];
+                    $file_tmp = $_FILES['eventImage']['tmp_name'];
+                    $eventFileName = "eventGallery/" . rand() . "_" . $file_name;
+                    move_uploaded_file($file_tmp, $eventFileName);
+                    $sql = "UPDATE EventGallery SET imageFileName='$eventFileName', updatedDate =  now() WHERE ID ='$eventId' ";
+                    $conn->query($sql);
+                }
+
+                $sql = "UPDATE EventGallery SET name = '$eventName', status = $eventStatus, updatedDate =  now() WHERE ID ='$eventId' ";
+                if ($conn->query($sql) == TRUE) {
+                    echo "Event updated successfully.";
+                } else {
+                    echo "Error while updating event.";
+                }
+            } else {
+                $eventFileName = "";
+                if (isset($_FILES['eventImage'])) {
+                    $file_name = $_FILES['eventImage']['name'];
+                    $file_tmp = $_FILES['eventImage']['tmp_name'];
+                    $eventFileName = "eventGallery/" . rand() . "_" . $file_name;
+                    move_uploaded_file($file_tmp, $eventFileName);
+                }
+                $sql = "INSERT INTO EventGallery (name, imageFileName, status, createdDate)
+                        VALUES ('$eventName', '$eventFileName', $eventStatus, now())";
+echo $sql;
+                if ($conn->query($sql) == TRUE) {
+                    echo "Event created successfully.";
+                } else {
+                    echo "Error while adding event.";
+                }
+            }
+        }  else if ($action == 'getEventImage') {
+            $sql = "SELECT * FROM EventGallery order by createdDate desc";
+            $result = mysqli_query($iCon, $sql);
+            $rows = array();
+            while ($r = mysqli_fetch_assoc($result)) {
+                $rows[] = $r;
+            }
+            echo json_encode($rows, JSON_PARTIAL_OUTPUT_ON_ERROR);
         }
     }
     $conn = null;

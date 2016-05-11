@@ -43,7 +43,7 @@
                     <h1>M1C – DENMARK</h1>
                     <p>Maritime1stChoice ApS<br>
                         Leestrupvej 31,<br>
-                        4683 Rønnede,<br>
+                        4683 Ronnede,<br>
                         Denmark.<br>
                         Telephone: +45 31598800<br></p>
                 </div>
