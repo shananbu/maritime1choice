@@ -4,10 +4,12 @@
       <nav class="foot_col_1 foot_nav">
         <h2>Quick Links</h2>
         <ul>
-          <li><a href="index.php">Home</a></li>
-          <li><a href="aboutUs.php">About Us</a></li>
-          <li><a href="ourClients.php">Clients</a></li>
-          <li><a href="contactUs.php">Contact us</a></li>
+            <li class="index"><a href="index.php"> Home </a></li>
+            <li class="bService"><a href="businessServices.php"> Business Services </a></li>
+            <li class="news"><a href="newsAll.php"> News </a></li>
+            <li class="careers"><a href="careers.php"> People </a></li>
+            <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
+            <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
         </ul>
       </nav>
       <nav class="foot_col_2 foot_nav">
