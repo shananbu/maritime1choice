@@ -16,9 +16,9 @@
     while ($row = mysqli_fetch_assoc($result)) {
 
     ?>
-  <div class="col-sm-3 client_page">
+  <div class="col-sm-3 client_page gal_clie">
       <figure>
-        <a > <span> <img
+        <a class="example-image-link" data-lightbox="example-set" href="admin/<?php echo $row['imageFileName'] ?>" > <span> <img
                 src="admin/<?php echo $row['imageFileName'] ?>"> </span> </a>
         <figcaption>
           <h1><?php echo $row['name'] ?></h1>

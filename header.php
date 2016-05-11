@@ -16,20 +16,13 @@ $page = 3;
     <div class="col-sm-10">
       <nav class="nav_menu top_menu collapse navbar-collapse" id="navbar">
         <ul>
-
-                    <li class="index"><a href="#"> Home </a></li>
-
-                    <li class="bService"><a href="businessServices.php"> Business Services </a></li>
-
-                    <li class="news"><a href="newsAll.php"> News </a></li>
-
-                    <li class="careers"><a href="careers.php"> People </a></li>
-
-                    <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
-
-                    <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
-
-                </ul>
+          <li class="index"><a href="#"> Home </a></li>
+          <li class="bService"><a href="businessServices.php"> Business Services </a></li>
+          <li class="news"><a href="newsAll.php"> News </a></li>
+          <li class="careers"><a href="careers.php"> People </a></li>
+          <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
+          <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
+        </ul>
       </nav>
     </div>
   </div>

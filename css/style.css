@@ -1409,3 +1409,34 @@ background: rgb(255, 255, 255) none repeat scroll 0 0;
 .bold-font {
 	font-weight: 600;
 }
+
+.gal_clie figure span img{
+	max-width: 100%;
+	width:100%;
+}
+.gal_clie figure span{
+	 height: 166px;
+    overflow: hidden;
+	 padding: 5px;
+}
+
+.gal_clie figure h1{
+	font-size: 16px;
+	padding: 10px 5px;
+	margin-bottom: auto;
+	text-align: center;
+}
+.count_panel{
+ float: right;	
+}
+.count_panel a{
+	display:block;
+}
+.count_panel a img{
+	 background: rgb(0, 0, 0) none repeat scroll 0 0;
+    padding: 4px;
+}
+.foo_coop{
+display: inline-block;
+    padding-top: 7px;
+}
