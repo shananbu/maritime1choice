@@ -1,5 +1,5 @@
 <?php
-$to = "shananbu@gmail.com";
+$to = "info@maritime1stchoice.com";
 $subject = "Enquiry from ".addslashes($_POST['personName']);
 
 $message = "Hi,<br>";
@@ -7,7 +7,7 @@ $message .= addslashes($_POST['comments']);
 $message .= "<br>Regards,";
 $message .= "<br>".addslashes($_POST['personName']);
 
-$header = "From:shananbu@gmail.com \r\n";
+$header = "From:info@maritime1stchoice.com \r\n";
 $header = "Cc:".addslashes($_POST['personEmail'])."\r\n";
 $header .= "MIME-Version: 1.0\r\n";
 $header .= "Content-type: text/html\r\n";
