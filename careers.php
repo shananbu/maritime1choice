@@ -1,18 +1,18 @@
 <?php session_start(); ?>
 <?php include("admin/config.php"); ?>
 
-    <!doctype html>
+<!doctype html>
 
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Careers</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
-        <script src="js/modernizr-2.6.2.min.js"></script>
-        <script src="js/jquery-1.12.0.js"></script>
-    </head>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Careers</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/jquery-1.12.0.js"></script>
+</head>
 
 <body>
 <div id="toTop"><i class="fa fa-chevron-up"></i></div>
@@ -83,16 +83,16 @@
                     recognised, trained and treated as an individual. You will be working within a supportive
 
                     environment, where we all like to treat each other like equals. <br><br>
-					
-					
-					Would you like  to be a part of M1C family click here to view latest Vacancies. We are always looking for new talents and recruits , please send your CV along with a cover letter, to    <a href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>)
-					
-					
-					</p>
-					
-					
-					
-					
+
+
+                    Would you like to be a part of M1C family click here to view latest Vacancies. We are always looking
+                    for new talents and recruits , please send your CV along with a cover letter, to <a
+                        href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>)
+
+
+                </p>
+
+
                 <section class="cus_accor_1">
                     <article>
                         <div class="panel-group" id="accordion">
@@ -101,25 +101,28 @@
                             $sql = "SELECT * FROM Careers where status = 1 order by createdDate desc";
 
                             $result = mysqli_query($iCon, $sql);
-if(mysqli_num_rows($result) > 0)
-{
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
-                                <div class="panel panel-default"><a data-toggle="collapse" class="panel-heading"
-                                                                    data-parent="#accordion" href="#collapseOne">
-                                        <span> <?php echo $row['title'] ?>, <?php echo $row['location'] ?> </span> <b>More
-                                            Info</b> </a>
-                                    <div id="collapseOne" class="panel-collapse collapse in">
-                                        <div class="job_desc">
-                                            <h1>Job Description</h1>
-                                            <p> <?php echo $row['description'] ?> </p>
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    ?>
+                                    <div class="panel panel-default"><a data-toggle="collapse" class="panel-heading"
+                                                                        data-parent="#accordion" href="#collapseOne">
+                                            <span> <?php echo $row['title'] ?>, <?php echo $row['location'] ?> </span>
+                                            <b>More
+                                                Info</b> </a>
+                                        <div id="collapseOne" class="panel-collapse collapse in">
+                                            <div class="job_desc">
+                                                <h1>Job Description</h1>
+                                                <p> <?php echo $row['description'] ?> </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <?php }} else { ?>
-                            <p class="te_ali_justify"><!--Would you like to be a part of M1C family click here to view latest Vacancies.--> We are always looking
-                                for new talents and recruits , please send your CV along with a cover letter, to
-                                <a href="mailto:hr@maritime1stchoice.com"> hr@maritime1stchoice.com </a>
+                                <?php }
+                            } else { ?>
+                                <p class="te_ali_justify">
+                                    <!--Would you like to be a part of M1C family click here to view latest Vacancies.-->
+                                    We are always looking
+                                    for new talents and recruits , please send your CV along with a cover letter, to
+                                    <a href="mailto:hr@maritime1stchoice.com"> hr@maritime1stchoice.com </a>
                                 </p>
                             <?php } ?>
                     </article>
@@ -142,4 +145,5 @@ if(mysqli_num_rows($result) > 0)
     });
 </script>
 <?php include("footer.php"); ?>
-</body></html>
+</body>
+</html>
