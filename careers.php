@@ -68,9 +68,15 @@
 
                     from going out for ice cream, or taking a team and family to an amusement park or a
 
-                    generous team lunch. (upload some pictures of some of our team events) </p>
+                    generous team lunch.</p>
             </div>
-
+            <section class="ful_row">
+                <div class="container">
+                    <section class="ad_pa latest_news">
+                        <?php include("m1cGallery.php"); ?>
+                    </section>
+                </div>
+            </section>
             <div class="car_pane" id="joinM1c">
                 <h1 class="h_1">Career - Join M1C</h1>
                 <p class="te_ali_justify">The secret of our success is the people we recruit – and we’re looking for the
