@@ -20,7 +20,7 @@ $page = 3;
           <li class="bService"><a href="businessServices.php"> Business Services </a></li>
           <li class="news"><a href="newsAll.php"> News </a></li>
           <li class="careers"><a href="careers.php"> People </a></li>
-          <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
+          <li class="clients"><a href="ourClients.php"> Clients </a></li>
           <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
         </ul>
       </nav>

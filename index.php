@@ -128,7 +128,7 @@
     <div class="ad_pa" id="mis_val">
       <h1 class="h_1">MISSION, VISION & VALUES</h1>
       <p>
-        With a mission to secure the value of our clients investment in shipping software by providing
+        With a <i>mission</i> to secure the value of our clients investment in shipping software by providing
 
         quality data service and IT consulting service characterized by transparency and mutual trust in a
 
@@ -141,17 +141,17 @@
       <h1 class="h_2"> Fundamental Principles </h1>
 	  
 	  <p>
-        <b class="bold-font">Quality</b> is of Utmost importance to M1C, as quality leads to trust and trust leads to lasting
+        <b class="bold-font"><i>Quality</i></b> is of Utmost importance to M1C, as quality leads to trust and trust leads to lasting
 
         business relationship with our client. <br>
       <br>
-        <b class="bold-font">Transparency</b> is an assurance and it goes hand in hand with Trust. It will be a part of collective
+        <b class="bold-font"><i>Transparency</i></b> is an assurance and it goes hand in hand with <b class="bold-font"><i>Trust</i></b>. It will be a part of collective
 
         decision making and maintain continuous dialogue between M1C and the Client.<br>
       <br>
         Through customer collaboration, cooperation and collective decision making M1C is able to
 
-        assure the client <b class="bold-font">Value for their investment.</b>
+        assure the client <b class="bold-font"><i>Value for their investment.</i></b>
       </p>
     </div>
   </div>

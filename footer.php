@@ -8,7 +8,7 @@
             <li class="bService"><a href="businessServices.php"> Business Services </a></li>
             <li class="news"><a href="newsAll.php"> News </a></li>
             <li class="careers"><a href="careers.php"> People </a></li>
-            <li class="clients"><a href="ourClients.php"> Our Clients </a></li>
+            <li class="clients"><a href="ourClients.php"> Clients </a></li>
             <li class="contactUs"><a href="contactUs.php"> Contact Us</a></li>
         </ul>
       </nav>
@@ -63,6 +63,7 @@
         <ul>
           <li> <a target="_blank" href="https://www.facebook.com/maritime1stchoice/"> <span> <i class="fa fa-facebook"></i> </span> Facebook </a> </li>
           <li> <a target="_blank" href="https://www.linkedin.com/company/maritime1st-choice?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A9386541%2Cidx%3A2-1-4%2CtarId%3A1457672387188%2Ctas%3Amaritime+1st+Choice"><span><i class="fa fa-linkedin"></i></span> linked in </a> </li>
+            <li> <a target="_blank" href="https://vibe.reesen-consulting.com"> <span> <i class="fa fa-chevron-circle-right"></i> </span> Novell Vibe </a> </li>
         </ul>
       </div>
     </div>
@@ -70,7 +71,10 @@
   
   <div class="footer_2 ful_row">
     <div class="container"> <span class="foo_coop">Copyright @ 2016 maritime1stchoice.com. All rights reserved </span>
-      <div class="count_panel"><a href='#'><img src='http://www.hit-counts.com/counter.php?t=MTM4NjA5MA==' border='0' alt='view Counter'></a></div>
+        <div class="count_panel">
+        <div class="count_panel_left"><h2>Total Visitor's  &nbsp;&nbsp;<h2></div>
+      <div class="count_panel_left"><a href='#'><img src='http://www.hit-counts.com/counter.php?t=MTM4NjA5MA==' border='0' alt='view Counter'></a></div>
+            </div>
     </div>
   </div>
 </footer>
