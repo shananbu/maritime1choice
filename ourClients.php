@@ -40,14 +40,23 @@
     <div class="row">
       <div class="col-sm-12">
         <h1 class="h_3 ad_pa">Our Clients</h1>
-        <p class="pt_10"> We believe in close cooperation with our clients and getting them involved in decision-making
-          process. Through our shared knowledge, and work platform (Novell Vibe) our clients are able to
-          collaborate, get an insight on project progress, be a part of the collective decision-making and
-          maintain a continuous dialogue with us. We want our clients to get a “value for their
-          investment”; we want to be able to share our book or calculation and time sheet so that they are
-          able to see how we calculate return on their investment. We do business in a righteous manner
-          and therefore we are never afraid to show how we have earned the revenue, we are ready to show
-          our client our operational cost over their investments. <br>
+        <p class="pt_10"> We believe in close cooperation with our clients and getting them involved in the decision-
+
+          making process. Through our shared knowledge, and work platform (Novell Vibe) our clients
+
+          are able to collaborate, get an insight on project progress, be a part of the collective
+
+          decision-making and maintain a continuous dialogue with us. We want our clients to get
+
+          "value for their investment"; we want to be able to share our book or calculation and time
+
+          sheet so that they are able to see how we calculate the return on their investment. We do
+
+          business in a righteous manner and therefore we are never afraid to show how we have
+
+          earned the revenue, we are ready to show our client our operational cost over their
+
+          investments. <br>
           <br>
           For Current clients, please click here to view your shared workspace-<br>
           <a href="https://vibe.reesenconsulting.com" class="lin_hr" target="_blank"> https://vibe.reesenconsulting.com </a> </p>
@@ -61,8 +70,7 @@
 <section id="testimonials">
   <div class="container test_monial">
     <h1 class="h_3 ad_pa">Testimonials </h1>
-    <p class="pt_10"> We are proud to announce that we have some of the top clients within the shipping industry
-      Name the clients with their logo and a few words on them- </p>
+    <p class="pt_10"> We are proud to announce that we have some of the top clients within the shipping industry. </p>
     <?php
 
             $sql = "SELECT * FROM Client where status = 1 order by name ";

@@ -40,36 +40,33 @@
     <div class="container">
       <div class="car_pane" id="peopleAtM1c">
         <h1 class="h_1">People at M1C</h1>
-        <p class="te_ali_justify"> M1C Culture &amp; Values - We acknowledge that we are only the worth the
-          value our
-          
-          employees create. It takes every member of our organization to be able to provide the
-          
-          experience we wish for our clients. Therefore we treat our employees guided by the same
-          
-          values as if we were working with our clients. They are well deserved of the same support
-          
-          and respect, for the work and time they invest in our company, as any other stakeholder. <br>
+        <p class="te_ali_justify">M1C Culture &amp; Values - We acknowledge that we are only worth the value our employees
+
+          create. It takes every member of our organization to be able to provide the experience and
+
+          service we wish for our clients. Therefore we treat our employees guided by the same values
+
+          as if we were working with our clients. They are well deserved of the same support and
+
+          respect, for the work and time they invest in our company, as any other stakeholder. <br>
           <br>
-          Reward and Benefits - At M1C we focus much on your performance and we are glad to
-          
-          provide performance related bonus, equitably rewarding employee rewarding employees
-          
-          for their contribution and encouraging long-term commitment. In addition your salary will
-          
-          be reviewed annually and annual bonus is provided to all employee. Along with that you will
-          
-          enjoy health insurance for you and your immediate family. <br>
+        <h1 class="h_2">Reward and Benefits</h1>
+
+        At M1C, we focus much on the performance of our employees and we are glad to provide
+
+        performance related bonus, equitably rewarding the employees for their contribution and
+
+        encouraging long-term commitment.<br>
           <br>
-          Team events – At M1C we believe in working hard and meeting our goal but we also
-          
-          understand that life is not all about working , we need time to relax, keeping that in mind
-          
-          the company holds team events and activities every now and then. The activities can vary
-          
-          from going out for ice cream, or taking a team and family to an amusement park or a
-          
-          generous team lunch.</p>
+        <b class="bold-font">Team events</b> – At M1C we believe in working hard and reaching our goals but we also
+
+        understand that life is not all about work, we need time to relax. Keeping that in mind the
+
+        company holds team events and activities every now and then. The activities can vary from
+
+        going out for ice cream, or taking the team and their family to an amusement park or a
+
+        generous team lunch.</p>
       </div>
       <section class="ful_row">
         <div class="container">
@@ -80,18 +77,17 @@
       </section>
       <div class="car_pane" id="joinM1c">
         <h1 class="h_1">Career - Join M1C</h1>
-        <p class="te_ali_justify">The secret of our success is the people we recruit – and we’re looking for the
-          best. All we
-          
-          need is computing experience, an enquiring mind and the proven ability to solve problems,
-          
-          and a team player. .Join us and you'll find that the focus is all about you. You will be
-          
-          recognised, trained and treated as an individual. You will be working within a supportive
-          
-          environment, where we all like to treat each other like equals. <br>
+        <p class="te_ali_justify">The secret of our success is the people we recruit – and we are always looking for the best,
+
+          with computing experience, an enquiring mind, proven ability to solve problems, and a team
+
+          player. Join us and you'll find that the focus is all about you. You will be recognised, trained
+
+          and treated as an individual. You will be working within a supportive environment, where
+
+          we all like to treat each other like equals. <br>
           <br>
-          Would you like to be a part of M1C family click here to view latest Vacancies. We are always looking
+          Would you like to be a part of M1C family click <a href="#joinM1c">here</a> to view latest Vacancies. We are always looking
           for new talents and recruits , please send your CV along with a cover letter, to <a
                         href="mailto:hr@maritime1stchoice.com">hr@maritime1stchoice.com</a>) </p>
         <section class="cus_accor_1">
