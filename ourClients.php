@@ -89,7 +89,7 @@
           </article>
         </div>
         <div class="col-sm-3 client_page">
-          <figure> <a href="//<?php echo $row['referenceUrl'] ?>" target="_blank"> <span> <img
+          <figure> <a> <span> <img
                                         src="admin/<?php echo $row['logoFileName'] ?>"> </span> </a>
             <figcaption>
               <h1><?php echo $row['name'] ?></h1>
