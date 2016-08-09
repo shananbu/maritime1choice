@@ -12,7 +12,9 @@ if (isset($_GET['selected'])) {
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-2 logo"><a href="index.php?selected=1"> <img src="images/logo.png"> <span aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed"> <i class="fa fa-bars"></i> </span></a> </div>
+     <div class="col-sm-2 logo"><a href="index.php?selected=1"> <img src="images/logo.png"> </a>
+    <span aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed"> <i class="fa fa-bars"></i> </span>
+     </div>
     <div class="col-sm-10">
       <nav class="nav_menu top_menu collapse navbar-collapse" id="navbar">
         <ul>
